@@ -1,0 +1,51 @@
+a:hover {
+	text-decoration: none;
+}
+
+a:link {
+	text-decoration: underline;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+a:active {
+	text-decoration: none;
+
+}
+
+h1 {
+	font-family: helvetica;
+	font-size: 100px;
+}
+
+#background {
+	margin: 0 auto;
+	width: 700px;
+	height: 700px;
+	text-align: center;
+	z-index: -1;
+}
+
+body {
+}
+
+
+#draggable {
+	position: absolute;
+	display: block;
+	z-index:-1;
+}
+
+#draggableheader {
+	display: block;
+	position: absolute;
+	z-index:1;
+}
+
+#one {
+	margin-top: ;
+
+}

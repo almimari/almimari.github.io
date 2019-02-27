@@ -1,0 +1,39 @@
+* {
+	cursor: crosshair;
+}
+
+h1 {
+	font-size: 80px;
+	font-family: helvetica;
+}
+
+#title {
+	display: block;
+	width: 30%;
+	float: left;
+	margin-top:-40px;
+/*	border: solid 1px black;
+*/
+}
+
+#planned {
+	display: inline-block;
+	width: 100%;
+	float: right;
+	text-align: right;
+	display: hidden;
+	margin-top: -150px
+	}
+
+#planned h1 {
+	color: orange;
+	font-size: 200px;
+	text-shadow: 10px 10px 50px red;
+
+}
+
+body {
+	background-color: orange;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
