@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>~birth stone guide~</title>		
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="shortcut icon" href="images/favicon.png">
+		<link type="text/css" rel="stylesheet" href="main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/script.js"></script>
+	    <script src="js/jquery.js"></script> 
+
+
+	</head>
+	<body>
+		<div id="info">
+			Birth Stone Guide
+		</div>
+
+
+<!-- CREDITS -->
+<div id="user-side">
+  
+
+<div id="userInput">
+        <BR><BR>
+    <h1 style="padding: 10px;"> What is your birth month:</h1> <br><input type="text" id="yourAnswer" value=""><BR>
+
+   
+    <button id="btnSearch" onclick="findStone()">go</button><BR>
+
+    <div id="answer" style="padding: 10px;"	> </div>
+
+ <div id="credits">
+        <h5>
+            <div id="creditClick">Credits <br> </div>
+            <div id="creditHidden">
+            Designed by: Mari Al-Midhadi <br>
+            Code Reference: <a href="http://clara.io/" target="_blank" rel="noopener">Ben Houston</a> <br>
+            Information from: <a href="https://www.pridediamonds.co.uk/wp-content/uploads/2018/09/birthstones.pdf"> Pride Diamonds</a>
+            </div>
+        </h5>
+
+  </div>
+</div>
+
+        
+</div>
+<script>
+var previous_stone="sapphire"
+var current_stone="sapphire"
+
+</script>
+
+
+
+		<script type="module">
+
+			import * as THREE from '../build/three.module.js';
+
+			import { OrbitControls } from './jsm/controls/OrbitControls.js';
+			import { FBXLoader } from './jsm/loaders/FBXLoader.js';
+
+// we declared a global for rotation of the gem
+let rotateY = 0;
+let count=0
+//We declare the variable myObj which will hold the gem object that you load in
+			let camera, scene, renderer, gemBackMaterial,gemFrontMaterial;
+			let allObj = {}
+			init();
+
+			function init() {
+
+				scene = new THREE.Scene();
+				// scene.background = loader.load('images/velvet.jpg');
+
+				scene.background = new THREE.Color( 0xffffff );
+
+
+
+
+// I placed two light sources here, one from below and one from above 
+//so that the facets of the gem shine on both sides
+				const light = new THREE.DirectionalLight( 0xffffff );
+				light.position.set( 0, -50.0, 0).normalize();
+
+				scene.add( light );
+				const light2 = new THREE.DirectionalLight( 0xffffff );
+				light2.position.set( 0, 50.0, 0).normalize();
+
+				scene.add( light2 );
+
+				camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 500 );
+
+				camera.position.y = -3;
+				camera.position.z = 40;
+
+				scene.add( camera );
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+
+const loader = new FBXLoader();
+
+for (var i=0; i < birthstones.length; i++) {
+let mylink = birthstones[i]["model"];
+console.log(mylink)
+
+
+	loader.load( mylink, function ( object ) {
+let myObj
+myObj = object.children[0]
+ myObj.scale.set(0.01,0.01,0.01);
+ myObj.rotation.set(0,0.1,0);
+ myObj.position.set(3,0,0);  
+ allObj[myObj.name]=myObj
+ console.log(myObj.name)
+ 
+ var obLen = Object.keys(allObj).length;
+ console.log(obLen)
+ if (obLen == 12) {
+    //  scene.add( allObj["sapphire"] );
+
+
+
+
+render();
+animate();
+}
+}, undefined, function ( e ) {
+// this error tells us what happens if there's a problem loading in the actual FBX file
+  console.error( e );
+
+} );
+
+}
+// 	loader.load( 'models/3d_objects3/february.fbx', function ( object ) {
+// 
+// myObj = object.children[0]
+//  myObj.scale.set(0.01,0.01,0.01);
+//  myObj.rotation.set(0,0.1,0);
+//  myObj.position.set(3,0,0);  
+//  allObj.push(myObj)
+//       //scene.add( allObj[0] );
+// 
+// 
+// 
+// 
+// // render();
+// // animate();
+// 
+// }, undefined, function ( e ) {
+// // this error tells us what happens if there's a problem loading in the actual FBX file
+//   console.error( e );
+// 
+// } );
+
+
+				const controls = new OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', render );
+				controls.update();
+
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				render();
+
+			}
+
+			function render() {
+				renderer.render( scene, camera );
+
+
+			}
+			function animate() {
+			//console.log(current_stone)
+ 			if (current_stone!= previous_stone) {
+			scene.remove( allObj[previous_stone])
+			scene.add(allObj[current_stone])
+			previous_stone = current_stone
+			}
+// in animate we update the Y rotation number (the speed)
+				rotateY += 0.02
+// and we reset the rotation	
+ allObj[current_stone].rotation.set(0,rotateY,0);
+	requestAnimationFrame( animate );
+	renderer.render( scene, camera );
+}
+
+		</script>
+	</body>
+</html>
