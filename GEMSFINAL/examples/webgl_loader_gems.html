@@ -24,9 +24,9 @@
 
 <div id="userInput">
         <BR><BR>
-    <h1 style="padding: 10px;"> What is your birth month:</h1> <br><input type="text" id="yourAnswer" value=""><BR>
+    <h1 style="padding: 10px;"> What is your birth month:</h1> <br><input type="text" id="yourAnswer" value="" onkeydown = "if (event.keyCode == 13) document.getElementById('btnSearch').click()"><BR>
 
-   
+ 
     <button id="btnSearch" onclick="findStone()">go</button><BR>
 
     <div id="answer" style="padding: 10px;"	> </div>
@@ -36,8 +36,8 @@
             <div id="creditClick">Credits <br> </div>
             <div id="creditHidden">
             Designed by: Mari Al-Midhadi <br>
-            Code Reference: <a href="http://clara.io/" target="_blank" rel="noopener">Ben Houston</a> <br>
-            Information from: <a href="https://www.pridediamonds.co.uk/wp-content/uploads/2018/09/birthstones.pdf"> Pride Diamonds</a>
+            Information from: <a href="https://www.pridediamonds.co.uk/wp-content/uploads/2018/09/birthstones.pdf"> Pride Diamonds</a><br>
+            Special thank you to my coding professor, Jon Thirkield
             </div>
         </h5>
 

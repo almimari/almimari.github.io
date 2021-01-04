@@ -119,7 +119,11 @@ function findStone() {
                     dataOut += "<b> Info:<BR>\n </b>" + birthstones[i].info + "<BR>\n";
                     //to update current stone
   					current_stone = birthstones[i].mname
-                }
+                } 
+                // else {
+                //     alert('Sorry, we cant find that month. Try learning how to spell\n');
+                //     console.log("error");
+                // }
                 // after the loop is done, display dataOut
                 document.getElementById("answer").innerHTML = dataOut;
             }

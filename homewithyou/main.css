@@ -1,0 +1,113 @@
+* {
+	color: pink;
+	font-size: 24px;
+	font-family: 'Orbitron', sans-serif;
+	text-align: center;
+}
+
+body {
+/*	width: 800px;
+*/	margin: 0 auto;
+	padding: 10px;
+	overflow: scroll;
+	background-image: url("imgfile/image7.jpg");
+	background-position: center; /* Center the image */
+  	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;   
+  	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  	cursor: url("https://downloads.totallyfreecursors.com/cursor_files/cherry.cur"), url("https://downloads.totallyfreecursors.com/thumbnails/cherry.gif"), auto;
+}
+
+button {
+	font-size: 30px;
+	font-family: 'Orbitron', sans-serif;
+	background: black;
+	color: white;
+	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+	height: 75px;
+}
+
+button:hover {
+	background:red;
+	cursor: url("https://downloads.totallyfreecursors.com/cursor_files/cherry.cur"), url("https://downloads.totallyfreecursors.com/thumbnails/cherry.gif"), auto;
+
+}
+
+h1 {
+ font-size: 26px;
+}
+
+h3 {
+	font-size: 20px;
+}
+
+#title {
+	padding: 50px;
+
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:hover {
+	color: white;
+}
+
+a:active {
+	font-size: 26px;
+	font-family: 'Orbitron', sans-serif;
+}
+
+#maintext {
+	padding:25px;
+	margin: 0 auto;
+	width: 700px;
+	height: 400px;
+	text-align: center;
+	color: pink;
+	font-size: 24px;
+	font-family: times;
+}
+
+
+
+#questions {
+	margin: 0 auto;
+	color: pink;
+	top: -400px;
+	font-size: 26px;
+}
+
+.fadein {
+animation: fadeIn ease 7s;
+-webkit-animation: fadeIn ease 7s;
+-moz-animation: fadeIn ease 7s;
+-o-animation: fadeIn ease 7s;
+-ms-animation: fadeIn ease 7s;
+}
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+}
