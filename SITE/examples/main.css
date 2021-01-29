@@ -1,0 +1,227 @@
+
+/*LOADING IN FONTS*/
+/*-----------------------------------------------*/
+@font-face {
+  font-family: bitmap;
+  src: url(fonts/NeueBit-Bold.woff);
+}
+
+@font-face {
+  font-family: machina;
+  src: url(fonts/NeueMachina-Black.woff);
+}
+
+/*ANIMATIONS*/
+/*-----------------------------------------------*/
+@keyframes funtime {
+	0%   {background-color: #ff0080; }
+    33%  {background-color: #ffff00;}
+    66%  {background-color: #ff4400;}
+    100% {background-color: #91ff00; }
+}
+
+@-webkit-keyframes funtime {
+	0%   {background-color: #ff0080; }
+    33%  {background-color: #ffff00;}
+    66%  {background-color: #ff4400;}
+    100% {background-color: #91ff00; }
+}
+
+
+@keyframes title {
+	0%   {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
+    50%  {text-shadow: 0 0 100px #000000, 0 0 100px #000000;}
+    100%  {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
+}
+
+@-webkit-keyframes title {
+	0%   {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
+    50%  {text-shadow: 0 0 100px #000000, 0 0 100px #000000;}
+    100%  {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
+}
+
+
+
+
+/*DESKTOP STYLING*/
+/*-----------------------------------------------*/
+
+
+.dg.ac {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	z-index: 2 !important; /* TODO Solve this in HTML */
+}
+
+canvas {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: -2;
+}
+
+
+
+body {
+	margin: 0;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+#title {
+	font-size:200px;
+	font-family: bitmap, helvetica;
+	position: absolute;
+	z-index: 20;
+    animation: title 10s infinite;
+}
+
+button {
+	background-color: white;
+	border: black 3px solid;
+	border-radius: 50%;
+	font-family: bitmap, helvetica;
+	font-size: 75px;
+}
+
+#user-side {
+	z-index: 200;
+}
+
+
+#bt1 {
+	width: 400px;
+	height: 300px;
+	margin-top: 60vh;
+	margin-left: 50vw;
+	position: absolute;
+}
+
+#bt1:hover{
+	background-color: blue;
+	color: white;
+}
+
+#bt2 {
+	width: 600px;
+	height: 600px;
+	margin-top: 5vh;
+	margin-left: 20vw;
+	position: absolute;
+}
+
+#bt2:hover{
+	color: white;
+	background-color: magenta;
+}
+
+#bt3 {
+	width: 400px;
+	height: 200px;
+	margin-top: 20vh;
+	margin-left: 70vw;
+	position: absolute;
+	background-color: white;
+}
+
+#bt3:hover {
+	animation: funtime 0.3s infinite;
+
+}
+
+
+
+
+/*MEDIA QUERIES*/
+/*-----------------------------------------------*/
+@media only screen and (max-width: 1398px) {
+	body {
+	margin: 0;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+#title {
+	font-size:200px;
+	font-family: bitmap, helvetica;
+	position: absolute;
+	z-index: 20;
+    animation: title 10s infinite;
+}
+
+button {
+	background-color: white;
+	border: black 3px solid;
+	border-radius: 50%;
+	font-family: bitmap, helvetica;
+	font-size: 100px;
+}
+
+#user-side {
+	z-index: 200;
+}
+
+
+#bt1 {
+	width: 300px;
+	height: 200px;
+	margin-top: 10vh;
+	margin-left: 70vw;
+	position: absolute;
+	background-color: transparent;
+
+}
+
+#bt1:hover{
+	background-color: blue;
+	color: white;
+}
+
+#bt2 {
+	width: 600px;
+	height: 600px;
+	margin-top: 20vh;
+	margin-left: 10vw;
+	position: absolute;
+	background-color: transparent;
+
+}
+
+#bt2:hover{
+	color: white;
+	background-color: magenta;
+}
+
+#bt3 {
+	width: 400px;
+	height: 200px;
+	margin-top: 60vh;
+	margin-left: 35vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt3:hover {
+	animation: funtime 0.3s infinite;
+
+}
+}
+
+
+/*CUSTOM CURSORS*/
+/*-----------------------------------------------*/
+
+
+/*YIN YANG*/
+ /** {cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym88.ani), url(https://cur.cursors-4u.net/symbols/sym-1/sym88.png), auto !important;}*/
+/** {cursor: url(sym88.gif), auto;}*/
+
+/*BEACH BALL CURSOR*/
+/* * {cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur704.ani), url(https://cur.cursors-4u.net/cursors/cur-7/cur704.png), auto !important;} */
+
+
+/*HELLO KITTY CURSOR*/
+ * {cursor: url(https://cur.cursors-4u.net/anime/ani-12/ani1133.ani), url(https://cur.cursors-4u.net/anime/ani-12/ani1133.png), auto !important;}
+
