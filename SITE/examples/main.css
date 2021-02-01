@@ -40,12 +40,53 @@
     100%  {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
 }
 
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
 
 
 
 /*DESKTOP STYLING*/
 /*-----------------------------------------------*/
 
+
+h1 {
+	font-size:100px;
+	font-family: bitmap, helvetica;
+	position: absolute;
+	z-index: 20;
+	width: 40vw;
+	margin-left: 30vw;
+	margin-top: 20vh;
+}
+
+h2 {
+	margin: 0 auto;
+	font-family:  helvetica;
+	font-size: 50px;
+	color: #91ff00;
+}
+
+h5 {
+	margin: 0 auto;
+	font-family: helvetica;
+	font-size: 25px;
+}
 
 .dg.ac {
 	-moz-user-select: none;
@@ -63,17 +104,17 @@ canvas {
 }
 
 
-
-body {
+body, html {
 	margin: 0;
-	background-color: transparent;
 	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
 }
 
 #title {
 	font-size:200px;
 	font-family: bitmap, helvetica;
-	position: absolute;
+	position: fixed;
 	z-index: 20;
     animation: title 10s infinite;
 }
@@ -84,10 +125,6 @@ button {
 	border-radius: 50%;
 	font-family: bitmap, helvetica;
 	font-size: 75px;
-}
-
-#user-side {
-	z-index: 200;
 }
 
 
@@ -128,6 +165,210 @@ button {
 	background-color: transparent;
 }
 
+/*#bt3:hover {
+	animation: funtime 0.3s infinite;
+
+}*/
+
+/*OTHER PAGES*/
+
+#container {
+/*	margin-left: 45vw;
+	margin-top: 45vh;*/
+
+	z-index: 10;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	position: absolute;
+
+}
+
+
+
+/*WORK*/
+/*-----------------------------------------------*/
+
+.draggable {
+	cursor: move;
+/*	z-index: 100;*/
+	position: absolute;
+	border: 10px black solid;
+	width: 50vw;
+	height: 50vh;
+	border-radius: 10px;
+	z-index: 100;
+	margin: 10px;
+	padding: 10px;
+	overflow-x: hidden; /* Hide horizontal scrollbar */
+	overflow-y: scroll; /* Add vertical scrollbar */
+	background-color: white;
+
+}
+
+li:hover {
+	text-decoration: none;
+	text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;
+}
+
+#twenty {
+	margin-top: 20%;
+	margin-left: 10%;
+	background-color: white;
+	display: none;
+}
+
+
+#facefilters {
+	margin-top: 20%;
+	margin-left: 40%;
+	background-color: white;
+	display: none;
+}
+
+
+img {
+	width: 300px;
+}
+
+.close_button {
+	border-radius: 50%;
+	background-color: #91ff00;
+	width: 40px;
+	height: 40px;
+	position: fixed;
+}
+
+.close_button:hover {
+	background-color: black;
+}
+
+
+/*SCROLLBAR*/
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #91ff00;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+
+
+/*HOVER STATES*/
+/*-----------------------------------------------*/
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;
+}
+
+a:active {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+
+
+/*MEDIA QUERIES*/
+/*-----------------------------------------------*/
+
+
+/*MOBILE SIZE*/
+@media only screen  (max-width: 375px){
+.dg.ac {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	z-index: 2 !important; 
+}
+
+canvas {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: -2;
+}
+
+
+body {
+	margin: 0;
+/*	background-color: transparent;
+*/	overflow: hidden;
+}
+
+#title {
+	font-size: 50px;
+	font-family: bitmap, helvetica;
+	position: absolute;
+	z-index: 20;
+    animation: title 10s infinite;
+}
+
+button {
+	background-color: white;
+	border: black 3px solid;
+	border-radius: 50%;
+	font-family: bitmap, helvetica;
+	font-size: 20px;
+}
+
+#user-side {
+	z-index: 200;
+}
+
+
+#bt1 {
+	width: 100px;
+	height: 70px;
+	margin-top: 60vh;
+	margin-left: 50vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt1:hover{
+	background-color: blue;
+	color: white;
+}
+
+#bt2 {
+	width: 200px;
+	height: 200px;
+	margin-top: 5vh;
+	margin-left: 20vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt2:hover{
+	color: white;
+	background-color: magenta;
+}
+
+#bt3 {
+	width: 200px;
+	height: 100px;
+	margin-top: 20vh;
+	margin-left: 70vw;
+	position: absolute;
+	background-color: transparent;
+}
+
 #bt3:hover {
 	animation: funtime 0.3s infinite;
 
@@ -135,10 +376,10 @@ button {
 
 
 
+}
 
-/*MEDIA QUERIES*/
-/*-----------------------------------------------*/
-@media only screen and (max-width: 1398px) {
+/*TABLET SIZE*/
+@media only screen (max-width: 1398px) {
 	body {
 	margin: 0;
 	background-color: #ffffff;
@@ -146,7 +387,7 @@ button {
 }
 
 #title {
-	font-size:200px;
+	font-size:100px;
 	font-family: bitmap, helvetica;
 	position: absolute;
 	z-index: 20;

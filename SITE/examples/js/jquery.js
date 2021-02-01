@@ -1,10 +1,17 @@
-    $(document).ready(function(){
-        
-        $("#bt3").click(function(){
-            $('body, html').css("animation", "funtime 0.3s infinite");
-            $(this).css("background-color", "white");
-        });
+            $( function() {
+                 $( ".draggable" ).draggable();
+                 $(".draggable").resizable();
+
+                $("#li_twenty").click(function(){
+                    $("#twenty").toggle(100);
+                });
+
+                $(".close_button").click(function(){
+                    $(this).parent().hide();
+                })
 
 
-
-    });
+                $("#li_facefilter").click(function(){
+                    $("#facefilters").toggle();
+                })
+            });

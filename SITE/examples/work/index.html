@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>werk</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="../main.css"> 
+        <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<!--         <script src="../js/jquery.js"></script> -->
+        <script>
+
+            $( function() {
+                 $( ".draggable" ).draggable();
+                 $(".draggable").resizable();
+
+                $("#li_twenty").click(function(){
+                    $("#twenty").toggle();
+                });
+
+                $(".close_button").click(function(){
+                    $(this).parent().hide();
+                })
+
+
+                $("#li_facefilter").click(function(){
+                    $("#facefilters").toggle();
+                })
+            });
+
+        </script>
+
+    </head>
+
+<body>
+
+        <div id="title">
+        <a href="../index.html">
+            mari <br>
+            al- <br>
+            midhadi
+        </a>
+        </div>
+
+
+<div id="container">
+    <ul style="list-style-type:none;" ><h1>
+        <li id="li_twenty">20/20</li>
+        <li id="li_facefilter">face filters</li>
+        <li><a href="">reel</a></li>
+        <li><a href="">podcast app</a></li>
+        <li><a href="">birthstone guide</a></li>
+    </ul></h1>
+
+    <div id="twenty" class="draggable">
+        <div class="close_button"></div>        
+        <h2> 20/20 Festival </h2>
+        <h5>
+            Brand Identity<br>
+            Speculative
+        </h5>
+
+
+        <img src="../images/twenty1.jpg">
+        <img src="../images/twenty2.jpg">
+        <img src="../images/twenty3.jpg">
+        <img src="../images/twenty4.jpg">
+        <img src="../images/twenty5.jpg">
+        <img src="../images/twenty6.jpg">
+
+
+    </div>
+
+
+    <div id="facefilters" class="draggable">
+        <div class="close_button"></div>        
+        <h2> AR Face Filters </h2>
+        <h5>
+            Spark AR<br>
+
+        </h5>
+
+
+        <img src="../images/twenty1.jpg">
+        <img src="../images/twenty2.jpg">
+        <img src="../images/twenty3.jpg">
+        <img src="../images/twenty4.jpg">
+        <img src="../images/twenty5.jpg">
+        <img src="../images/twenty6.jpg">
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

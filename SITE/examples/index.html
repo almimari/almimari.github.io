@@ -6,11 +6,26 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link rel="shortcut icon" href="images/favicon.png">
 		<link type="text/css" rel="stylesheet" href="main.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	    <script src="js/jquery.js"></script> 
+	    <script>
+	    	$(function(){
+	    		$("#bt3").mouseenter(function(){
+	    			$("#bt2", "#bt1").hide();
+	    			$("#bt3").css("background-color", "white");
+	    			$("body, html").css("animation", "funtime 0.3s infinite");
+	    		});
 
+	    		$("#bt3").mouseleave(function(){
+	    			$("#bt2", "#bt1").show();
+	    			$("#bt3").css("background-color", "white");
+	    			$("body, html").css("animation", "none");
+	    		})
+	    	});
+	    </script>
 
 	</head>
+
 	<body>
 
 <div id="user-side">
@@ -20,11 +35,12 @@
 			midhadi
 		</div>
 
-	<button type="button" id="bt1">contact</button>
-	<button type="button" id="bt2">werk</button>
-	<button type="button" id="bt3">fun time</button>
+	<a href="contact/"><button type="button" id="bt1">contact</button></a>
+	<a href="work/"><button type="button" id="bt2">werk</button></a>
+	<a href="funtime/"><button type="button" id="bt3">fun time</button></a>
         
 </div>
+
 
 
 
@@ -34,135 +50,239 @@
 
 			import * as THREE from '../build/three.module.js';
 
-			import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
+
 			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
 
-// we declared a global for rotation of the gem
-let rotateX = 0;
-//We declare the variable myObj which will hold the gem object that you load in
-			let camera, scene, renderer, myObj;
+
+			let rotateY = 0;
+
+			let container;
+
+			let camera, scene, renderer;
+
+			let mouseX = 0;
+			let mouseY = 0;
+
+			let windowHalfX = window.innerWidth / 2;
+			let windowHalfY = window.innerHeight / 2;
+
+
+
+			let object;
+
+
 			init();
+			animate();
+
+
+
 
 			function init() {
 
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera.position.z = 250;
+
+				// scene
+
 				scene = new THREE.Scene();
-				// scene.background = loader.load('images/velvet.jpg');
+				scene.background = new THREE.Color( 0xffffff );
 
-				scene.background = new THREE.Color( 0x000000 );
+				const ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+				scene.add( ambientLight );
 
-
-
-
-// I placed two light sources here, one from below and one from above 
-//so that the facets of the gem shine on both sides
-				const light = new THREE.DirectionalLight( 0xffffff );
-				light.position.set( 0, -50.0, 0).normalize();
-
-				scene.add( light );
-				const light2 = new THREE.DirectionalLight( 0xffffff );
-				light2.position.set( 0, 50.0, 0).normalize();
-
-				scene.add( light2 );
-
-				camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 500 );
-
-				camera.position.y = -3;
-				camera.position.z = 40;
-
+				const pointLight = new THREE.PointLight( 0xffffff, 0.8 );
+				camera.add( pointLight );
 				scene.add( camera );
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				document.body.appendChild( renderer.domElement );
+
+
+				// manager
+
+				function loadModel() {
+
+					object.traverse( function ( child ) {
+
+						if ( child.isMesh ) child.material.map = texture;
+
+
+					object.position.y = - 95;
+					scene.add( object );
+
+					 object.scale.set(20,20,20);
+					 object.rotation.set(0,0,0);
+					 object.position.set(0,0,0);  
+
+					} );
 
 
 
-//attempting to add some shinier texture to the objects
-const loader = new OBJLoader();
-new MTLLoader( manager )
+
+
+				}
+
+				const manager = new THREE.LoadingManager( loadModel );
+
+				manager.onProgress = function ( item, loaded, total ) {
+
+					console.log( item, loaded, total );
+
+				};
+
+				// texture
+
+				const textureLoader = new THREE.TextureLoader( manager );
+				const texture = textureLoader.load( 'textures/uv_grid_opengl.jpeg' );
+
+
+				// model
+
+				function onProgress( xhr ) {
+
+					if ( xhr.lengthComputable ) {
+
+						const percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( 'model ' + Math.round( percentComplete, 2 ) + '% downloaded' );
+
+					}
+
+				}
+
+				function onError() {}
+
+
+
+
+// ATTEMPT #1 OF TRYING TO LOAD MATERIAL
+				// var loadOBJ = function(){
+
+				// var mtlLoader = new THREE.MTLLoader();
+				// mtlLoader.setPath( '/models/' );
+				// var url = "Zinc_Spinner.mtl";
+				// mtlLoader.load( url, function( materials ) {
+
+				// materials.preload();
+
+				// //Manager from ThreeJs to track a loader and its status
+				// var manager = new THREE.LoadingManager();
+				// //Loader for Obj from Three.js
+				// var loader = new THREE.OBJLoader( manager );
+
+				// loader.setMaterials( materials );
+				// loader.setPath( '/models/' );
+
+				// //Launch loading of the obj file, addNefertitiInScene is the callback when it's ready 
+				// loader.load( 'Zinc_Spinner.obj', addObjectInScene);
+
+				// }, onProgress, onError );
+
+
+				// };
+
+
+
+				const loader = new OBJLoader( manager);
+
+				new MTLLoader( manager )
 					.setPath( 'models/' )
 					.load( 'Zinc_Spinner.mtl', function ( materials ) {
 
 						materials.preload();
+					
+					//Manager from ThreeJs to track a loader and its status
+					var manager = new THREE.LoadingManager();
+					//Loader for Obj from Three.js
+					var loader = new THREE.OBJLoader( manager );
 
-    
-	loader.load( 'models/Zinc_Spinner.obj', function ( object ) {
+					loader.setMaterials( materials );
+					loader.setPath( '/models/' );
 
-// once we load it in, we attach it to our global variable
-myObj = object.children[0]
+					});
 
- myObj.scale.set(0,0,0);
- myObj.rotation.set(0,0,0);
- myObj.position.set(0,0,0);  
- 
- // We added it to the screen   
-      scene.add( myObj );
+				loader.load( 'models/Zinc_Spinner.obj', function ( obj ) {
 
- //LOAD BACKGROUND TEXTURE (I DIDN'T USE THIS BECAUSE IT DIDN'T LOOK GOOD)
-// const loader = new THREE.TextureLoader();
-// loader.load('./images/gem.jpg' , function(texture)
-//             {
-//              scene.background = texture;  
-//             });
+					object = obj;
+
+
+				}, onProgress, onError );
 
 
 
-// and then we both render and animate the scene once this is done.
+				//
 
-render();
-animate();
-
-}, undefined, function ( e ) {
-// this error tells us what happens if there's a problem loading in the actual FBX file
-  console.error( e );
-
-} );
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
 
 
-		const controls = new OrbitControls( camera, renderer.domElement );
-		controls.addEventListener( 'change', render );
-		controls.update();
+				document.addEventListener( 'mousemove', onDocumentMouseMove );
 
-		window.addEventListener( 'resize', onWindowResize, false );
-	});
+				//
 
-	function onWindowResize() {
+				window.addEventListener( 'resize', onWindowResize );
 
-		camera.aspect = window.innerWidth / window.innerHeight;
-		camera.updateProjectionMatrix();
+			}
+			render();
+			animate();
 
-		renderer.setSize( window.innerWidth, window.innerHeight );
+			function onWindowResize() {
 
-		render();
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
 
-	}
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
 
-	function onDocumentMouseMove( event ) {
+				renderer.setSize( window.innerWidth, window.innerHeight );
 
-		mouseX = ( event.clientX - windowHalfX ) / 2;
-		mouseY = ( event.clientY - windowHalfY ) / 2;
+			}
 
-	}
+			function onDocumentMouseMove( event ) {
+
+				// mouseX = (event.clientX);
+				// mouseY = (event.clientY);
+				mouseY = ( event.clientY - windowHalfY ) / 2;
+				mouseX = ( event.clientX - windowHalfX ) / 2;
+
+			}
+
+			//
+
+			function render() {
 
 
-	function render() {
-		renderer.render( scene, camera );
+				// object.rotation.x += ( mouseX/object.rotation.x);
+				// object.rotation.y += ( mouseY/object.rotation.y);
+
+				camera.position.x += ( mouseX - camera.position.x ) * 1;
+				camera.position.y += ( - mouseY - camera.position.y ) * 1;
+
+				camera.lookAt( scene.position );
+
+				renderer.render( scene, camera );
+
+			}
 
 
-	}
-			
-	function animate() {
-// in animate we update the Y rotation number (the speed)
-				rotateX += 0.02
-// and we reset the rotation	
- myObj.rotation.set(rotateX,0,0);
-	requestAnimationFrame( animate );
-	renderer.render( scene, camera );
-}
+			function animate() {
+
+				requestAnimationFrame( animate );
+				rotateY += 0.02;
+
+				object.rotation.set(Math.PI / 2,rotateY,0);
+
+				render();
+
+			}
+			animate();
+
 
 
 		</script>
+
 	</body>
 </html>
