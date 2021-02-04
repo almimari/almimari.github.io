@@ -112,11 +112,12 @@ body, html {
 }
 
 #title {
-	font-size:200px;
+	font-size:100px;
 	font-family: bitmap, helvetica;
 	position: fixed;
 	z-index: 20;
     animation: title 10s infinite;
+    padding: 50px;
 }
 
 button {
