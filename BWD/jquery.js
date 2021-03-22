@@ -13,22 +13,20 @@ $(document).ready(function(){
 
             anime({
                 targets: '.title-tab',
-                width: '30vw', // -> from '28px' to '100%',
+                width: '10vw', // -> from '28px' to '100%',
                 easing: 'easeOutElastic(1, .6)',
                 endDelay: 1000,
                 direction: 'normal',
-                delay: anime.stagger(100) // increase delay by 100ms for each elements.
                 });
             $(elements).removeClass(c);
 
             } else {
                  anime({
                 targets: '.title-tab',
-                width: '10vw', // -> from '28px' to '100%',
+                width: '30vw', // -> from '28px' to '100%',
                 easing: 'easeOutElastic(1, .6)',
                 endDelay: 1000,
-                direction: 'reverse',
-                delay: anime.stagger(100) // increase delay by 100ms for each elements.
+                direction: 'normal',
                 });
                 $(elements).addClass(c);
                 console.log(c);
