@@ -1,0 +1,164 @@
+h3 {
+
+	font-family: agrandir-bold;
+	font-size: 52px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+h1 {
+	font-family: agrandir-black;
+	font-size: 70px;
+}
+
+
+h2 {
+	font-family: agrandir-black;
+	font-size: 40px;
+}
+
+@font-face {
+	font-family: "agrandir-bold";
+  	src: url("fonts/Agrandir-TextBold.otf") format("opentype"), 
+  	url("fonts/Agrandir-TextBold.ttf")  format("truetype"),
+  	url("fonts/Agrandir-TextBold.woff2") format("woff2"),
+    url("fonts/Agrandir-TextBold.woff") format("woff");
+}
+
+@font-face {
+	font-family: "agrandir-regular";
+  	src: url("fonts/Agrandir-Regular.otf") format("opentype"), 
+  	url("fonts/Agrandir-Regular.ttf")  format("truetype"),
+  	url("fonts/Agrandir-Regular.woff2") format("woff2"),
+    url("fonts/Agrandir-Regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "agrandir-black";
+ 	 src: url("fonts/Agrandir-NarrowBlack.otf") format("opentype"), 
+ 	 url("fonts/Agrandir-NarrowBlack.ttf")  format("truetype"),
+ 	 url("fonts/Agrandir-NarrowBlack.woff2") format("woff2"),
+    url("fonts/Agrandir-NarrowBlack.woff") format("woff");
+}
+
+.name {
+	background-color: beige;
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+	z-index: 100;
+	display: block;
+	position: fixed;
+}
+
+input {
+	border: 2px solid black;
+	width: 50vw;
+	height: 20hv;
+	font-family: agrandir-black;
+	font-size: 15vh;
+}
+
+input:focus {
+	box-shadow:  0 0 1em pink, 0 0 0.2em pink;
+	    outline-width: 0;
+
+}
+
+button {
+	width: 20vw;
+	height: 10vh;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 20px;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: black;
+	color: white;
+}
+
+#question {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#hello {
+	position: fixed;
+	z-index: 90;
+	display: block;
+}
+
+iframe {
+	padding: 40px;
+	border: 2px solid black;
+	border-radius: 20px;
+	position: fixed;
+	background-color: white;
+	z-index: 50;
+	width: 50vw;
+	height: 40vh;
+}
+
+.closeout {
+	width: 30px;
+	height: 100%;
+	border: 1px solid black;
+	left: 0px;
+	top: 0px;
+}
+
+
+#people_watch_btn {
+	border: 2px solid black;
+	border-radius: 50%;
+	display: block;
+	width: 400px;
+	height: 200px;
+	text-align: center;
+	margin: 0, auto;
+	position: fixed;
+	z-index: 10;
+	left: 20vw;
+	top: 30vh;
+	display: none;
+}
+
+
+#people_watch_btn:hover {
+	box-shadow:  0 0 1em blue, 0 0 0.2em blue;
+	cursor: pointer;
+	background-color: blue;
+}
+
+#people_watch {
+	display: none;
+	left: 20vw;
+	top: 30vh;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+/*  overflow: hidden;
+*/}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 1800px;
+}
+
+.image-container {
+    width: 100%;
+    height: 100vh;
+    padding-top: 45.347%;
+    position: fixed;
+    top: 0;
+    background-size: fill;
+    background-image: url('bluesky/sky_00000.jpg');
+}

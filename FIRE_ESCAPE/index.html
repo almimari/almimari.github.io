@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>FIRE ESCAPE</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="main.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="js/title-scroll-master/title-scroll.js" data-start="5000" data-speed="250"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+
+<body>
+
+
+<div class="name">
+<div id="question">
+    <h1>What's your name?</h1>  
+    <input type="text" id="name" name="name"><br><br> <button id="name_enter" onclick="welcome()"> <h2>enter → <h2></button></div>
+</div>
+
+
+<div><h1 id="hello">  Hi _____, you are on the fire escape. </h1></div>
+
+    <!-- enter button -->
+<div id="people_watch_btn">
+    <h3> people <br>watch </h3>
+</div>
+
+<div class="draggable">
+    <iframe  class="resizable" id="people_watch" src="https://driveandlisten.herokuapp.com/" title="people watch">
+        <div class="closeout">X</div>
+    </iframe>
+</div>
+
+
+<div class='container'>
+  <div class='image-container'></div>
+</div>
+
+
+
+</body>
+
+
+
+
+<script>
+
+
+// -----BLUE SKY ANIMATION -----
+
+    // Images asset
+
+
+const skyImages = {
+    1:'bluesky/sky_00000.jpg',
+    2:'bluesky/sky_00005.jpg',
+    3:'bluesky/sky_00010.jpg',
+    4:'bluesky/sky_00015.jpg',
+    5:'bluesky/sky_00020.jpg',
+    6:'bluesky/sky_00025.jpg',
+    7:'bluesky/sky_00030.jpg',
+    8:'bluesky/sky_00035.jpg',
+    9:'bluesky/sky_00040.jpg',
+    10:'bluesky/sky_00045.jpg',
+    11:'bluesky/sky_00050.jpg',
+    12:'bluesky/sky_00055.jpg',
+    13:'bluesky/sky_00060.jpg',
+    14:'bluesky/sky_00065.jpg',
+    15:'bluesky/sky_00070.jpg',
+    16:'bluesky/sky_00075.jpg',
+    17:'bluesky/sky_00080.jpg',
+    18:'bluesky/sky_00085.jpg',
+    19:'bluesky/sky_00090.jpg',
+    20:'bluesky/sky_00095.jpg',
+    21:'bluesky/sky_00100.jpg',
+    22:'bluesky/sky_00105.jpg',
+    23:'bluesky/sky_00110.jpg',
+    24:'bluesky/sky_00115.jpg',
+    25:'bluesky/sky_00120.jpg',
+    26:'bluesky/sky_00125.jpg',
+    27:'bluesky/sky_00130.jpg',
+    28:'bluesky/sky_00135.jpg',
+    29:'bluesky/sky_00140.jpg',
+    30:'bluesky/sky_00145.jpg',
+    31:'bluesky/sky_00150.jpg',
+    32:'bluesky/sky_00155.jpg',
+    33:'bluesky/sky_00160.jpg',
+    34:'bluesky/sky_00165.jpg',
+    35:'bluesky/sky_00170.jpg',
+    36:'bluesky/sky_00175.jpg',
+    37:'bluesky/sky_00180.jpg',
+    38:'bluesky/sky_00185.jpg',
+    39:'bluesky/sky_00190.jpg',
+    40:'bluesky/sky_00195.jpg',
+    41:'bluesky/sky_00200.jpg',
+    42:'bluesky/sky_00205.jpg',
+    43:'bluesky/sky_00210.jpg',
+    44:'bluesky/sky_00215.jpg',
+    45:'bluesky/sky_00220.jpg',
+    46:'bluesky/sky_00225.jpg',
+    47:'bluesky/sky_00230.jpg',
+    48:'bluesky/sky_00235.jpg',
+    49:'bluesky/sky_00240.jpg',
+    50:'bluesky/sky_00245.jpg',
+}
+
+
+// Global variable to control the scrolling behavior
+const step = 30; // For each 30px, change an image
+function trackScrollPosition() {
+  const y = window.scrollY;
+  const label = Math.min(Math.floor(y/30) + 1, 50);
+  const imageToUse = skyImages[label];
+  // Change the background image
+  $('.image-container').css('background-image', `url('${imageToUse}')`);
+}
+$(document).ready(()=>{
+  $(window).scroll(()=>{
+    trackScrollPosition();
+  })
+})
+
+
+// ----- NAME INPUT -----
+
+
+
+function welcome() {
+       var name = document.getElementById("name").value; 
+
+    document.getElementById("hello").innerHTML =
+
+    "Hi " + name + ", you are on the fire escape."; 
+}
+
+
+// ----- JQUERY DISPLAY CONTROLS -----
+
+$('#people_watch_btn').click(function(){
+    $('#people_watch').show(300);
+})
+
+$('.closeout').click(function(){
+    $('#people_watch').hide(300);
+})
+
+$('#name_enter').click(function(){
+    $('.name').hide(400);
+    $('#people_watch_btn').show(300);
+})
+
+
+  <script>
+$(function(){
+      $( ".draggable" ).draggable();
+     $( ".resizable" ).resizable({
+          maxHeight: 400,
+          maxWidth: 500,
+          minHeight: 150,
+          minWidth: 200
+        });    
+})
+
+
+</script>
+
+
+
+</html>
