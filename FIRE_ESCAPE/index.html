@@ -21,12 +21,12 @@
 <div class="name">
 <div id="question">
     <h1>What's your name?</h1>  
-    <input type="text" id="name" name="name"><br><br> <button id="name_enter" onclick="welcome()"> <h2>enter → <h2></button></div>
+    <input type="text" id="name" name="name"><br><br> <button id="name_enter" onclick="welcome()" style="text-align: center; margin: 0 auto; box-sizing: border-box; line-height: 20px;"> <h2>enter → <h2></button></div>
 </div>
 
 
 <!-- WELCOME MESSAGE -->
-<div><h1 id="hello">  Hi _____, you are on the fire escape. </h1></div>
+<div><h1 id="hello"> </h1></div>
 
 
 <!-- PEOPLE WATCH -->
@@ -56,13 +56,13 @@
     <h3> write yourself <br> a letter </h3>
 </div>
 
-<div id="letter"> 
+<div id="letter" class="draggable" class="resizable"> 
      <form method="post" name="contact_form"
         action="contact-form-handler.php">
-            Email Address:
-            <input type="text" name="email">
-            Message:
-            <textarea name="message"></textarea>
+            Email Address: <br>
+            <input type="text" name="email"><br>
+            Message: <br>
+            <textarea name="message"></textarea><br>
             <input type="submit" value="Submit">
         </form>
 </div>
@@ -73,9 +73,9 @@
 </div>
 
         <div id="thought" class="draggable" class="resizable">
-            <h1> Thought of the day: </h1><br>
-            <h3 id="thought_enter" style="  text-shadow:  0 0 1em pink, 0 0 0.2em pink;"></h3>
-            <button style=" height: 100%; margin-top: 50px;padding: 10px; font-size: 18px; text-align: center; margin: 0 auto; font-family: agrandir-regular; background-color: white;" onclick="quote()">another one </button>
+            <h1 style="font-size: 30px;"> Thought of the day: </h1><br>
+            <h3 id="thought_enter" style="margin-bottom: 20px; margin-top: -20px;text-shadow:  0 0 1em pink, 0 0 0.2em pink;"></h3>
+            <button style=" height: 100%; padding: 20px; font-size: 18px; text-align: center; margin: 0 auto; font-family: agrandir-regular; background-color: white;" onclick="quote()">another one </button>
         </div>
 
 
@@ -96,6 +96,22 @@
 
 
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -346,6 +362,9 @@ for (let j=0; j<quotes.length; j++) {
 // }
 
 
+// ----- iFRAME MUTE -----
+    // let myVid = document.getElementById("#people_watch");
+    // myVid.muted=true;
 
 // ----- EMAIL FORM -----
 
@@ -412,7 +431,6 @@ $('#name_enter').click(function(){
 })
 
 
-  <script>
 $(function(){
       $( ".draggable" ).draggable();
      $( ".resizable" ).resizable({

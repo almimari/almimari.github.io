@@ -131,7 +131,7 @@ iframe {
 
 
 #people_watch_btn:hover {
-	box-shadow:  0 0 1em blue, 0 0 0.2em blue;
+	box-shadow:  0 0 1em white, 0 0 0.2em white;
 	cursor: pointer;
 	background-color: blue;
 }
@@ -154,7 +154,7 @@ iframe {
 
 
 #walk_btn:hover {
-	box-shadow:  0 0 1em blue, 0 0 0.2em blue;
+	box-shadow:  0 0 1em white, 0 0 0.2em white;
 	cursor: pointer;
 	background-color: pink;
 }
@@ -183,7 +183,7 @@ iframe {
 
 
 #letter_btn:hover {
-	box-shadow:  0 0 1em blue, 0 0 0.2em blue;
+	box-shadow:  0 0 1em white, 0 0 0.2em white;
 	cursor: pointer;
 	background-color: blue;
 }
@@ -220,21 +220,22 @@ iframe {
 
 
 #thought_btn:hover {
-	box-shadow:  0 0 1em blue, 0 0 0.2em blue;
+	box-shadow:  0 0 1em white, 0 0 0.2em white;
 	cursor: pointer;
 	background-color: blue;
 }
 
 #thought {
 	display: none;
-	padding: 50px;
+	padding: 20px;
 	border: 2px solid black;
 	border-radius: 20px;
 	position: fixed;
 	background-color: white;
 	z-index: 50;
 	width: 30vw;
-
+	text-align: center;
+	margin: 0 auto;
 	left: 50vw;
 	top: 30vh;
 }
@@ -246,18 +247,19 @@ iframe {
 	width: 200px;
 	height: 100px;
 	text-align: center;
-	margin: 0, auto;
+	margin: 0 auto;
 	position: fixed;
+	line-height: 100px;
 	z-index: 10;
-	left: 90vw;
+	left: 85vw;
 	top: 5vh;
 	display: none;
+	box-sizing: border-box;
 }
 
 #exit:hover {
 		box-shadow:  0 0 1em red, 0 0 0.2em red;
 	cursor: pointer;
-	background-color: red;
 }
 
 #people_watch {
