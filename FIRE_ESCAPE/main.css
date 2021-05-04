@@ -1,7 +1,7 @@
 h3 {
 
 	font-family: agrandir-bold;
-	font-size: 52px;
+	font-size: 40px;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -50,7 +50,8 @@ h2 {
 	z-index: 100;
 	display: block;
 	position: fixed;
-}
+/*	background-image: url("images/sky.gif");
+*/}
 
 .name input {
 	border: 2px solid black;
@@ -63,6 +64,7 @@ h2 {
 input:focus {
 	box-shadow:  0 0 1em pink, 0 0 0.2em pink;
 	    outline-width: 0;
+	color: black;
 
 }
 
@@ -87,10 +89,11 @@ button:hover {
 
 #hello {
 	position: fixed;
-	z-index: 90;
+	z-index: 20;
 	display: block;
 	margin-left: 100px;
-	color: white;
+	color: black;
+  text-shadow: 2px 2px 5px white;
 }
 
 iframe {
@@ -104,12 +107,93 @@ iframe {
 	height: 40vh;
 }
 
-.closeout {
+
+#another-thought {
+	background-color: white;
+}
+
+#closeout_walk {
 	width: 30px;
-	height: 100%;
+	height: 30px;
+	background-color: black;
+	border-radius: 50%;
+	z-index: 100;
+	display: inline-block;
+	position: fixed;
+	margin: 7px;
+}
+
+#closeout_thought{
+	width: 30px;
+	height: 30px;
+	background-color: black;
+	border-radius: 50%;
+	z-index: 100;
+	display: block;
+	position: fixed;
+	margin: 7px;
+}
+
+#closeout_people {
+	width: 30px;
+	height: 30px;
+	background-color: black;
+	border-radius: 50%;
+	z-index: 100;
+	display: block;
+	position: fixed;
+	margin: 7px;
+}
+
+#closeout_people:hover {
+	width: 30px;
+	height: 30px;
+	background-color: white;
 	border: 1px solid black;
-	left: 0px;
-	top: 0px;
+	border-radius: 50%;
+	z-index: 100;
+	display: inherit;
+	position: fixed;
+	margin: 7px;
+	cursor: pointer;
+}
+
+#closeout_letter {
+	width: 30px;
+	height: 30px;
+	background-color: black;
+	border-radius: 50%;
+	z-index: 100;
+	display: block;
+	position: fixed;
+	margin: -40px;
+	font-family: agrandir-bold;
+	font-size: 20px;
+}
+
+#closeout_letter:hover {
+	width: 30px;
+	height: 30px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 50%;
+	z-index: 100;
+	display: block;
+	position: fixed;
+	margin: -40px;
+}
+
+#closeout_thought:hover, #closeout_walk:hover {
+	width: 30px;
+	height: 30px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 50%;
+	z-index: 100;
+	display: block;
+	position: fixed;
+	margin: 7px;
+	cursor: pointer;
 }
 
 
@@ -124,7 +208,7 @@ iframe {
 	margin: 0, auto;
 	position: fixed;
 	z-index: 10;
-	left: 20vw;
+	left: 10vw;
 	top: 30vh;
 	display: none;
 }
@@ -133,7 +217,14 @@ iframe {
 #people_watch_btn:hover {
 	box-shadow:  0 0 1em white, 0 0 0.2em white;
 	cursor: pointer;
-	background-color: blue;
+}
+
+#people_watch {
+	display: none;
+	top: 30vh;
+	left: 10vw;
+	width: 40vw;
+	height: 50vh;
 }
 
 #walk_btn {
@@ -156,13 +247,14 @@ iframe {
 #walk_btn:hover {
 	box-shadow:  0 0 1em white, 0 0 0.2em white;
 	cursor: pointer;
-	background-color: pink;
 }
 
 #walk {
 	top: 30vh;
 	left: 30vw;
 	display: none;
+	width: 40vw;
+	height: 50vh;
 }
 
 #letter_btn {
@@ -184,8 +276,9 @@ iframe {
 
 #letter_btn:hover {
 	box-shadow:  0 0 1em white, 0 0 0.2em white;
+	background-color: black;
+	color: white;
 	cursor: pointer;
-	background-color: blue;
 }
 
 
@@ -199,7 +292,22 @@ iframe {
 	z-index: 50;
 	width: 30vw;
 	left: 20vw;
-	top: 50vh;
+	top: 30vh;
+}
+
+
+form {
+	font-family: agrandir-regular;
+	font-size: 20px;
+}
+
+#letter_button {
+	border-radius: 20px;
+	font-family: agrandir-regular;
+	color: black;
+	font-family: agrandir-regular; 
+	font-size: 20px;
+
 }
 
 #thought_btn {
@@ -222,7 +330,6 @@ iframe {
 #thought_btn:hover {
 	box-shadow:  0 0 1em white, 0 0 0.2em white;
 	cursor: pointer;
-	background-color: blue;
 }
 
 #thought {
@@ -240,6 +347,7 @@ iframe {
 	top: 30vh;
 }
 
+
 #exit {
 	border: 2px solid black;
 	border-radius: 50%;
@@ -250,23 +358,35 @@ iframe {
 	margin: 0 auto;
 	position: fixed;
 	line-height: 100px;
-	z-index: 10;
+	z-index: 202;
 	left: 85vw;
 	top: 5vh;
 	display: none;
 	box-sizing: border-box;
+
+/*	  animation: exit 2.5s infinite;
+  animation-direction: alternate;*/
 }
 
 #exit:hover {
-		box-shadow:  0 0 1em red, 0 0 0.2em red;
+	box-shadow: none;
 	cursor: pointer;
+	animation: none;
+	background-color: white;	
 }
 
-#people_watch {
+#exit-block {
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+	background-color: black;
+	z-index: 200;
 	display: none;
-	left: 20vw;
-	top: 30vh;
+	position: fixed;
+
 }
+
+
 
 a:visited {
     text-decoration: none;
@@ -300,7 +420,7 @@ body {
 .container {
   position: relative;
   width: 100%;
-  height: 1800px;
+  height: 2966px;
 }
 
 .image-container {
@@ -309,12 +429,40 @@ body {
     padding-top: 45.347%;
     position: fixed;
     top: 0;
-    background-size: cover;
+    background-size: fill;
     background-image: url('bluesky/sky_00000.jpg');
 }
 
 
 
+
+/*ANIMATIONS!!!*/
+
+
+
+@-webkit-keyframes exit {
+    0% { transform: rotate(0deg); scale: 1.5;  }
+   25% { transform: rotate(78deg); scale: 2;  left: 10vw; top: 80vh;}
+   50% { transform: rotate(1890deg); scale: 1; left: 30vw; top: 30vh;}
+   75% { transform: rotate(180deg); scale: 0.2; left: 60vw; top: 20vh;}
+  100% { transform: rotate(0deg); scale: 1; }
+}
+
+@-ms-keyframes exit {
+    0% { transform: rotate(0deg); scale: 1.5;  }
+   25% { transform: rotate(78deg); scale: 2;  left: 10vw; top: 80vh;}
+   50% { transform: rotate(1890deg); scale: 1; left: 30vw; top: 30vh;}
+   75% { transform: rotate(180deg); scale: 0.2; left: 60vw; top: 20vh;}
+  100% { transform: rotate(0deg); scale: 1; }
+}
+
+@keyframes exit {
+    0% { transform: rotate(0deg); scale: 1.5;  }
+   25% { transform: rotate(78deg); scale: 2;  left: 10vw; top: 80vh;}
+   50% { transform: rotate(1890deg); scale: 1; left: 30vw; top: 30vh;}
+   75% { transform: rotate(180deg); scale: 0.2; left: 60vw; top: 20vh;}
+  100% { transform: rotate(0deg); scale: 1; }
+}
 
 .wiggle:hover {
   -webkit-animation-name: wiggle;

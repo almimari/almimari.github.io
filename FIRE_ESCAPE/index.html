@@ -16,12 +16,14 @@
 
 <body>
 
+<div id="exit-block"></div>
+
     <!-- enter button -->
 
 <div class="name">
 <div id="question">
     <h1>What's your name?</h1>  
-    <input type="text" id="name" name="name"><br><br> <button id="name_enter" onclick="welcome()" style="text-align: center; margin: 0 auto; box-sizing: border-box; line-height: 20px;"> <h2>enter → <h2></button></div>
+    <input type="text" id="name" name="name"><br><br> <button id="name_enter" onclick="welcome()" style="text-align: center; margin: 0 auto; box-sizing: border-box; line-height: 10px;"> <h2>Enter → <h2></button></div>
 </div>
 
 
@@ -31,51 +33,56 @@
 
 <!-- PEOPLE WATCH -->
 <div id="people_watch_btn" class="wiggle">
-    <h3> drive <br>around </h3>
+    <h3> Drive <br>around </h3>
 </div>
-<div class="draggable" class="resizable">
-    <iframe  class="draggable" class="resizable"  id="people_watch" src="https://driveandlisten.herokuapp.com/" title="people watch">
-        <div class="closeout">X</div>
+
+<div class="draggable" class="resizable" id="people_watch">
+    <div id="closeout_people"></div>
+    <iframe  class="draggable" class="resizable" id="muted" src="https://driveandlisten.herokuapp.com/" title="people watch">
     </iframe>
 </div>
 
 <!-- WALK AROUND -->
 <div id="walk_btn" class="wiggle">
-    <h3> walk <br>around </h3>
+    <h3> Walk <br>around </h3>
 </div>
 
 <div class="draggable" class="resizable">
+    <div id="closeout_walk"></div>
     <iframe  class="draggable" class="resizable"  id="walk" src="https://citywalks.live/" title="city walk">
-        <div class="closeout">X</div>
     </iframe>
 </div>
 
 
 <!-- LETTER -->
 <div id="letter_btn" class="wiggle">
-    <h3> write yourself <br> a letter </h3>
+    <h3> Write yourself <br> a letter </h3>
 </div>
 
 <div id="letter" class="draggable" class="resizable"> 
-     <form method="post" name="contact_form"
-        action="contact-form-handler.php">
-            Email Address: <br>
-            <input type="text" name="email"><br>
-            Message: <br>
-            <textarea name="message"></textarea><br>
-            <input type="submit" value="Submit">
+        <div id="closeout_letter"></div>
+
+     <form  method="post" name="contact_form"
+        action="mail_handler.php">
+            <span style="font-family: agrandir-bold; font-size: 24px;"> Email: <br></span>
+            <input style="width: 95%; height: 50px; font-family: agrandir-regular; font-size: 20px;  border: 2px solid black; border-radius: 20px;" type="text" name="email"><br>
+            <span style="font-family: agrandir-bold; font-size: 24px;"> How're you feeling right now? <br> </span>
+            <textarea style="width: 95%; height: 200px;border: 2px solid black;  border-radius: 20px; font-size: 20px; font-family: agrandir-regular" name="message"></textarea><br>
+            <button id="letter_button" type="submit" value="Submit"> Send </button>
         </form>
 </div>
 
 <!-- THOUGHT OF THE DAY -->
 <div id="thought_btn" class="wiggle" onclick="quote()">
-    <h3> thought of <br>the day </h3>
+    <h3> Thought of <br>the day </h3>
 </div>
 
         <div id="thought" class="draggable" class="resizable">
+                <div id="closeout_thought"></div>
+
             <h1 style="font-size: 30px;"> Thought of the day: </h1><br>
             <h3 id="thought_enter" style="margin-bottom: 20px; margin-top: -20px;text-shadow:  0 0 1em pink, 0 0 0.2em pink;"></h3>
-            <button style=" height: 100%; padding: 20px; font-size: 18px; text-align: center; margin: 0 auto; font-family: agrandir-regular; background-color: white;" onclick="quote()">another one </button>
+            <button id="another_thought" style=" height: 100%; padding: 20px; font-size: 18px; text-align: center; margin: 0 auto; font-family: agrandir-regular; " onclick="quote()">Another one </button>
         </div>
 
 
@@ -84,7 +91,6 @@
 <div id="exit" class="wiggle">
     <a href="enter.html"><h3> exit </h3></a>
 </div>
-
 
 
 
@@ -121,6 +127,143 @@
 
 
 
+
+
+
+// ----- QUOTES -----
+let quotes = [
+"Act as if what you do makes a difference. It does.", 
+"Success is not final, failure is not fatal: it is the courage to continue that counts.", 
+"Never bend your head. Always hold it high. Look the world straight in the eye.",
+"What you get by achieving your goals is not as important as what you become by achieving your goals.",
+"Believe you can and you're halfway there.",
+"When you have a dream, you've got to grab it and never let go.",
+"Life is like riding a bicycle. To keep your balance, you must keep moving.",
+"You are never too old to set another goal or to dream a new dream.",
+"Try to be a rainbow in someone else's cloud.",
+"Sometimes you will never know the value of a moment, until it becomes a memory.",
+"The most wasted of days is one without laughter.",
+"Stay close to anything that makes you glad you are alive.",
+"You get what you give.",
+"Some people look for a beautiful place. Others make a place beautiful.",
+"Be the change that you wish to see in the world.",
+"If I cannot do great things, I can do small things in a great way.",
+"My mission in life is not merely to survive, but to thrive.",
+"The bad news is time flies. The good news is you're the pilot.",
+"Don't wait. The time will never be just right.",
+"No matter what people tell you, words and ideas can change the world.",
+"A champion is defined not by their wins but by how they can recover when they fall.",
+"Keep your face always toward the sunshine, and shadows will fall behind you."
+];
+
+
+function quote() {
+for (let j=0; j<quotes.length; j++) {
+    let randomMath = Math.floor(Math.random() * (quotes.length-1));
+    document.getElementById("thought_enter").innerHTML =
+    "“" + quotes[randomMath] + "”";
+}
+}
+
+
+
+
+// ----- EMAIL FORM -----
+
+    // var frmvalidator  = new Validator("contactform");
+    // frmvalidator.addValidation("name","req","Please provide your name");
+    // frmvalidator.addValidation("email","req","Please provide your email");
+    // frmvalidator.addValidation("email","email",
+    //   "Please enter a valid email address");
+
+
+
+// ----- NAME INPUT -----
+
+function welcome() {
+    var name = document.getElementById("name").value; 
+
+    document.getElementById("hello").innerHTML =
+
+    "Hi " + name + ", you are on the<br> fire escape."; 
+
+//     input.addEventListener("keyup", function(event) {
+//     if (event.keyCode === 13) {
+//         event.preventDefault();
+//         document.getElementById("name_enter").click();
+//     }
+// });
+
+
+}
+
+
+// MUTE
+
+
+// ----- JQUERY DISPLAY CONTROLS -----
+
+$('#people_watch_btn').click(function(){
+    $('#people_watch').css('display', 'block');
+})
+
+$('#thought_btn').click(function(){
+    $('#thought').fadeIn(300);
+})
+
+$('#walk_btn').click(function(){
+    $('#walk').css('display', 'block');
+})
+
+$('#letter_btn').click(function(){
+    $('#letter').fadeIn(300);
+})
+
+$('#closeout_thought').click(function(){
+    $('#thought').fadeOut(300);
+})
+
+$('#closeout_people').click(function(){
+    $('#people_watch').fadeOut(300);
+})
+
+$('#closeout_walk').click(function(){
+    $('#walk').fadeOut(300);
+})
+
+$('#closeout_letter').click(function(){
+    $('#letter').fadeOut(300);
+})
+
+$('#exit').mouseenter(function(){
+    $("#exit-block").fadeIn(300);
+})
+
+$('#exit').mouseleave(function(){
+    $("#exit-block").fadeOut(300);
+
+})
+
+
+$('#name_enter').click(function(){
+    $('.name').fadeOut(400);
+    $('#people_watch_btn').fadeIn(300);
+    $('#walk_btn').fadeIn(300);
+    $('#thought_btn').fadeIn(300);
+    $('#letter_btn').fadeIn(300);
+    $('#exit').fadeIn(100);
+
+})
+
+
+$(function(){
+      $( ".draggable" ).draggable();
+     $( ".resizable" ).resizable();    
+})
+
+
+
+
 // -----BLUE SKY ANIMATION -----
 
     // Images asset
@@ -129,6 +272,27 @@
 //     const skyImages = {
 //      [i]:"'bluesky/sky_0000" + [i] + ".jpg'",
 // }
+$(window).on('scroll', function() {
+    console.log( $(this).scrollTop() );
+});
+
+
+
+// Global variable to control the scrolling behavior
+const step = 30; // For each 30px, change an image
+function trackScrollPosition() {
+  const y = window.scrollY;
+  const label = Math.min(Math.floor(y/30) + 1, 150);
+  const imageToUse = skyImages[label];
+  // Change the background image
+  $('.image-container').css('background-image', `url('${imageToUse}')`);
+}
+$(document).ready(()=>{
+  $(window).scroll(()=>{
+    trackScrollPosition();
+  })
+})
+
 
 const skyImages = {
     1:'bluesky/sky_00001.jpg',
@@ -283,163 +447,6 @@ const skyImages = {
     150:'bluesky/sky_000150.jpg'
 }
 
-
-// Global variable to control the scrolling behavior
-const step = 30; // For each 30px, change an image
-function trackScrollPosition() {
-  const y = window.scrollY;
-  const label = Math.min(Math.floor(y/30) + 1, 150);
-  const imageToUse = skyImages[label];
-  // Change the background image
-  $('.image-container').css('background-image', `url('${imageToUse}')`);
-}
-$(document).ready(()=>{
-  $(window).scroll(()=>{
-    trackScrollPosition();
-  })
-})
-
-
-
-
-
-// ----- QUOTES -----
-let quotes = [
-"Act as if what you do makes a difference. It does.", 
-"Success is not final, failure is not fatal: it is the courage to continue that counts.", 
-"Never bend your head. Always hold it high. Look the world straight in the eye.",
-"What you get by achieving your goals is not as important as what you become by achieving your goals.",
-"Believe you can and you're halfway there.",
-"When you have a dream, you've got to grab it and never let go.",
-"Life is like riding a bicycle. To keep your balance, you must keep moving.",
-"You are never too old to set another goal or to dream a new dream.",
-"Try to be a rainbow in someone else's cloud.",
-"Sometimes you will never know the value of a moment, until it becomes a memory.",
-"The most wasted of days is one without laughter.",
-"Stay close to anything that makes you glad you are alive.",
-"You get what you give.",
-"Some people look for a beautiful place. Others make a place beautiful.",
-"Be the change that you wish to see in the world.",
-"If I cannot do great things, I can do small things in a great way.",
-"My mission in life is not merely to survive, but to thrive.",
-"The bad news is time flies. The good news is you're the pilot.",
-"Don't wait. The time will never be just right.",
-"No matter what people tell you, words and ideas can change the world.",
-"A champion is defined not by their wins but by how they can recover when they fall.",
-"Keep your face always toward the sunshine, and shadows will fall behind you."
-];
-
-
-// function randomLine() {
-// let resultsArray = [];
-// for (let i = 0; i < alltexts.length; i++) {
-//     let mytext = alltexts[i];
-//     let lineArray = mytext.split("\n");
-//     let randomMath = Math.floor(Math.random() * (lineArray.length-1));
-//     console.log(randomMath);
-// //  let sentenceArray = mytext.split(". "); // erase this line if you are splitting by line-breaks
-//     //for (let j=0; j < lineArray.length; j++) {
-//         resultsArray.push(lineArray[randomMath]);
-//     //}
-// }
-// printRight(resultsArray);
-// }
-
-function quote() {
-for (let j=0; j<quotes.length; j++) {
-    let randomMath = Math.floor(Math.random() * (quotes.length-1));
-    document.getElementById("thought_enter").innerHTML =
-    "“" + quotes[randomMath] + "”";
-}
-}
-
-
-
-//   var j;
-//     for (j = 0; j < quotes.length; j++) {
-//         document.getElementById("thought_enter").innerHTML =
-//     "“" + quotes[j] + "”";
-// }
-
-
-// ----- iFRAME MUTE -----
-    // let myVid = document.getElementById("#people_watch");
-    // myVid.muted=true;
-
-// ----- EMAIL FORM -----
-
-    // var frmvalidator  = new Validator("contactform");
-    // frmvalidator.addValidation("name","req","Please provide your name");
-    // frmvalidator.addValidation("email","req","Please provide your email");
-    // frmvalidator.addValidation("email","email",
-    //   "Please enter a valid email address");
-
-
-
-// ----- NAME INPUT -----
-
-
-
-function welcome() {
-       var name = document.getElementById("name").value; 
-
-    document.getElementById("hello").innerHTML =
-
-    "Hi " + name + ", you are on the fire escape."; 
-
-//     input.addEventListener("keyup", function(event) {
-//     if (event.keyCode === 13) {
-//         event.preventDefault();
-//         document.getElementById("name_enter").click();
-//     }
-// });
-
-
-}
-
-
-// ----- JQUERY DISPLAY CONTROLS -----
-
-$('#people_watch_btn').click(function(){
-    $('#people_watch').show(300);
-})
-
-$('#thought_btn').click(function(){
-    $('#thought').show(300);
-})
-
-$('#walk_btn').click(function(){
-    $('#walk').show(300);
-})
-
-$('#letter_btn').click(function(){
-    $('#letter').show(300);
-})
-
-$('.closeout').click(function(){
-    $('#people_watch').hide(300);
-})
-
-$('#name_enter').click(function(){
-    $('.name').hide(400);
-    $('#people_watch_btn').show(300);
-    $('#walk_btn').show(300);
-    $('#thought_btn').show(300);
-    $('#letter_btn').show(300);
-    $('#exit').show(100);
-
-})
-
-
-$(function(){
-      $( ".draggable" ).draggable();
-     $( ".resizable" ).resizable({
-          maxHeight: 400,
-          maxWidth: 500,
-          minHeight: 150,
-          minWidth: 200
-        });    
-})
 
 
 </script>
