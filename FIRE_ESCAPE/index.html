@@ -16,6 +16,7 @@
 
 <body>
 
+    <!-- enter button -->
 
 <div class="name">
 <div id="question">
@@ -24,19 +25,35 @@
 </div>
 
 
+<!-- WELCOME MESSAGE -->
 <div><h1 id="hello">  Hi _____, you are on the fire escape. </h1></div>
 
-    <!-- enter button -->
-<div id="people_watch_btn">
+
+<!-- PEOPLE WATCH -->
+<div id="people_watch_btn" class="wiggle">
     <h3> drive <br>around </h3>
 </div>
+<div class="draggable" class="resizable">
+    <iframe  class="draggable" class="resizable"  id="people_watch" src="https://driveandlisten.herokuapp.com/" title="people watch">
+        <div class="closeout">X</div>
+    </iframe>
+</div>
 
-<div id="walk_btn">
+<!-- WALK AROUND -->
+<div id="walk_btn" class="wiggle">
     <h3> walk <br>around </h3>
 </div>
 
-<div id="letter_btn">
-    <h3> write yourself a letter </h3>
+<div class="draggable" class="resizable">
+    <iframe  class="draggable" class="resizable"  id="walk" src="https://citywalks.live/" title="city walk">
+        <div class="closeout">X</div>
+    </iframe>
+</div>
+
+
+<!-- LETTER -->
+<div id="letter_btn" class="wiggle">
+    <h3> write yourself <br> a letter </h3>
 </div>
 
 <div id="letter"> 
@@ -50,27 +67,26 @@
         </form>
 </div>
 
-<div id="thought_btn" onclick="quote()">
-    <h3> thought of the day </h3>
+<!-- THOUGHT OF THE DAY -->
+<div id="thought_btn" class="wiggle" onclick="quote()">
+    <h3> thought of <br>the day </h3>
 </div>
 
         <div id="thought" class="draggable" class="resizable">
             <h1> Thought of the day: </h1><br>
-            <h3 id="thought_enter"></h3>
-            <button style=" height: 100%; margin-top: 50px;padding: 10px; font-size: 18px; text-align: center; margin: 0 auot; font-family: agrandir-regular;"onclick="quote()">another one </button>
+            <h3 id="thought_enter" style="  text-shadow:  0 0 1em pink, 0 0 0.2em pink;"></h3>
+            <button style=" height: 100%; margin-top: 50px;padding: 10px; font-size: 18px; text-align: center; margin: 0 auto; font-family: agrandir-regular; background-color: white;" onclick="quote()">another one </button>
         </div>
 
 
-<div id="exit">
+
+<!-- EXIT -->
+<div id="exit" class="wiggle">
     <a href="enter.html"><h3> exit </h3></a>
 </div>
 
 
-<div class="draggable" class="resizable">
-    <iframe  class="draggable" class="resizable"  id="people_watch" src="https://driveandlisten.herokuapp.com/" title="people watch">
-        <div class="closeout">X</div>
-    </iframe>
-</div>
+
 
 
 <div class='container'>
@@ -371,6 +387,10 @@ $('#people_watch_btn').click(function(){
 
 $('#thought_btn').click(function(){
     $('#thought').show(300);
+})
+
+$('#walk_btn').click(function(){
+    $('#walk').show(300);
 })
 
 $('#letter_btn').click(function(){
