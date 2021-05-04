@@ -43,7 +43,7 @@ h2 {
 }
 
 .name {
-	background-color: beige;
+	background-color: white;
 	width: 100vw;
 	height: 100vh;
 	box-sizing: border-box;
@@ -89,6 +89,8 @@ button:hover {
 	position: fixed;
 	z-index: 90;
 	display: block;
+	margin-left: 100px;
+	color: white;
 }
 
 iframe {
@@ -115,8 +117,9 @@ iframe {
 	border: 2px solid black;
 	border-radius: 50%;
 	display: block;
-	width: 400px;
-	height: 200px;
+/*	width: 400px;
+	height: 200px;*/
+	padding: 50px;
 	text-align: center;
 	margin: 0, auto;
 	position: fixed;
@@ -133,10 +136,149 @@ iframe {
 	background-color: blue;
 }
 
+#walk_btn {
+	border: 2px solid black;
+	border-radius: 50%;
+	display: block;
+/*	width: 400px;
+	height: 200px;*/
+	padding: 50px;
+	text-align: center;
+	margin: 0, auto;
+	position: fixed;
+	z-index: 10;
+	left: 50vw;
+	top: 30vh;
+	display: none;
+}
+
+
+#walk_btn:hover {
+	box-shadow:  0 0 1em blue, 0 0 0.2em blue;
+	cursor: pointer;
+	background-color: pink;
+}
+
+#letter_btn {
+	border: 2px solid black;
+	border-radius: 50%;
+	display: block;
+/*	width: 400px;
+	height: 200px;*/
+	padding: 50px;
+	text-align: center;
+	margin: 0, auto;
+	position: fixed;
+	z-index: 10;
+	left: 30vw;
+	top: 60vh;
+	display: none;
+}
+
+
+#letter_btn:hover {
+	box-shadow:  0 0 1em blue, 0 0 0.2em blue;
+	cursor: pointer;
+	background-color: blue;
+}
+
+
+#letter {
+	display: none;
+	padding: 50px;
+	border: 2px solid black;
+	border-radius: 20px;
+	position: fixed;
+	background-color: white;
+	z-index: 50;
+	width: 30vw;
+	left: 20vw;
+	top: 50vh;
+}
+
+#thought_btn {
+	border: 2px solid black;
+	border-radius: 50%;
+	display: block;
+/*	width: 400px;
+	height: 200px;*/
+	padding: 50px;
+	text-align: center;
+	margin: 0, auto;
+	position: fixed;
+	z-index: 10;
+	left: 60vw;
+	top: 60vh;
+	display: none;
+}
+
+
+#thought_btn:hover {
+	box-shadow:  0 0 1em blue, 0 0 0.2em blue;
+	cursor: pointer;
+	background-color: blue;
+}
+
+#thought {
+	display: none;
+	padding: 50px;
+	border: 2px solid black;
+	border-radius: 20px;
+	position: fixed;
+	background-color: white;
+	z-index: 50;
+	width: 30vw;
+
+	left: 50vw;
+	top: 30vh;
+}
+
+#exit {
+	border: 2px solid black;
+	border-radius: 50%;
+	display: block;
+	width: 200px;
+	height: 100px;
+	text-align: center;
+	margin: 0, auto;
+	position: fixed;
+	z-index: 10;
+	left: 90vw;
+	top: 5vh;
+	display: none;
+}
+
+#exit:hover {
+		box-shadow:  0 0 1em red, 0 0 0.2em red;
+	cursor: pointer;
+	background-color: red;
+}
+
 #people_watch {
 	display: none;
 	left: 20vw;
 	top: 30vh;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+    font-family: agrandir-bold;
+}
+
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
 }
 
 body {
@@ -159,6 +301,6 @@ body {
     padding-top: 45.347%;
     position: fixed;
     top: 0;
-    background-size: fill;
+    background-size: cover;
     background-image: url('bluesky/sky_00000.jpg');
 }
