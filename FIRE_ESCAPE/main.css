@@ -257,9 +257,10 @@ iframe {
 #walk {
 	top: 30vh;
 	left: 30vw;
-	display: none;
 	width: 40vw;
 	height: 50vh;
+	display: none;
+
 }
 
 #letter_btn {
@@ -386,6 +387,8 @@ form {
 	cursor: pointer;
 	animation: none;
 	background-color: white;	
+	box-shadow:  0 0 1em white, 0 0 0.2em white;
+
 }
 
 #exit-block {

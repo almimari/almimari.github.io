@@ -38,7 +38,7 @@
 
 <div class="draggable" class="resizable" id="people_watch">
     <div id="closeout_people"></div>
-    <iframe  class="draggable" class="resizable" id="muted" src="https://driveandlisten.herokuapp.com/" title="people watch">
+    <iframe  class="draggable" class="resizable" id="people_iframe" src="" title="people watch">
     </iframe>
 </div>
 
@@ -47,9 +47,9 @@
     <h3> Walk <br>around </h3>
 </div>
 
-<div class="draggable" class="resizable">
+<div class="draggable" class="resizable" id="walk">
     <div id="closeout_walk"></div>
-    <iframe  class="draggable" class="resizable"  id="walk" src="https://citywalks.live/" title="city walk">
+    <iframe  class="draggable" class="resizable"  id="walk_iframe" src="" title="city walk">
     </iframe>
 </div>
 
@@ -205,6 +205,7 @@ function welcome() {
 
 $('#people_watch_btn').click(function(){
     $('#people_watch').css('display', 'block');
+    $('#people_iframe').attr('src', 'https://driveandlisten.herokuapp.com/');
 })
 
 $('#thought_btn').click(function(){
@@ -213,6 +214,7 @@ $('#thought_btn').click(function(){
 
 $('#walk_btn').click(function(){
     $('#walk').css('display', 'block');
+    $("#walk_iframe").attr('src', 'https://citywalks.live/')
 })
 
 $('#letter_btn').click(function(){
@@ -225,6 +227,8 @@ $('#closeout_thought').click(function(){
 
 $('#closeout_people').click(function(){
     $('#people_watch').fadeOut(300);
+    $('#people_iframe').attr('src', 'none');
+
 })
 
 $('#closeout_walk').click(function(){
