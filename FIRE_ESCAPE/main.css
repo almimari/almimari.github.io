@@ -448,11 +448,182 @@ body {
     padding-top: 45.347%;
     position: fixed;
     top: 0;
-    background-size: fill;
+    background-size: contain, cover;
     background-image: url('bluesky/sky_00000.jpg');
 }
 
 
+
+/*MOBILE STYLING*/
+@media (max-width: 750px) { 
+
+	.name input {
+	border: 2px solid black;
+	width: 80vw;
+	height: 20vh;
+	font-family: agrandir-black;
+	font-size: 15vh;
+}
+
+button {
+	width: 50vw;
+	height: 10vh;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 20px;
+}
+
+#hello {
+	margin: 5px;
+	padding: 10px;
+	font-size: 10vw;
+}
+
+#people_watch_btn  {
+	top: 40vh;
+	padding: 25px;
+}
+
+
+#people_watch {
+	display: none;
+	top: 10vh;
+	left: 5vw;
+	width: 90vw;
+}
+
+#walk_btn {
+	left: 50vw;
+	top: 25vh;
+	padding: 25px;
+}
+
+#letter_btn {
+	left: 10vw;
+	top: 70vh;
+	padding: 25px;
+}
+
+#thought_btn {
+		top: 55vh;
+		left: 55vw;
+	padding: 25px;
+
+}
+
+#exit {
+	text-align: center;
+	margin: 0 auto;
+	padding: 0px;
+	left: 25vw;
+	top: 85vh;
+	background-color: white;
+
+}
+
+
+#closeout_thought {
+	margin: -10px;
+}
+
+#closeout_thought:hover {
+	margin: -10px;
+}
+
+
+h3 {
+
+	font-family: agrandir-bold;
+	font-size: 20px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+h1 {
+	font-family: agrandir-bold;
+	font-size: 50px;
+}
+
+
+h2 {
+	font-family: agrandir-black;
+	font-size: 20px;
+}
+
+.name {
+	background-image: url('images/sky.gif');
+}
+
+#exit {
+	background-color: black;
+	border: 1px solid white;
+	width:40vw;
+	left: 30vw;	
+}
+
+#exit h3 {
+	color: white;
+}
+
+iframe {
+	width: 70vw;
+	height: 70vh;
+}
+
+#people_watch {
+	width: 85vw;
+}
+
+#walk {
+	width: 85vw;
+	top: 10vh;
+	left: 5vw;
+}
+
+#letter {
+	display: none;
+	padding: 50px;
+	border: 2px solid black;
+	border-radius: 20px;
+	position: fixed;
+	background-color: white;
+	z-index: 50;
+	width: 60vw;
+	height: 60vh;
+	left: 5vw;
+	top: 10vh;
+	scale: 0.2;
+}
+
+#thought {
+	display: none;
+	padding: 20px;
+	border: 2px solid black;
+	border-radius: 20px;
+	position: fixed;
+	background-color: white;
+	z-index: 50;
+	width: 60vw;
+	text-align: center;
+	margin: 0 auto;
+	left: 15vw;
+	top: 30vh;
+}
+
+.image-container {
+    width: 100%;
+    height: 100vh;
+    padding-top: 45.347%;
+    position: fixed;
+    top: 0;
+    background-size: 400%;
+    background-image: url('bluesky/sky_00000.jpg');
+}
+
+
+
+}
 
 
 /*ANIMATIONS!!!*/
