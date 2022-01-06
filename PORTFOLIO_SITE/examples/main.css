@@ -1,0 +1,481 @@
+
+/*LOADING IN FONTS*/
+/*-----------------------------------------------*/
+@font-face {
+  font-family: bitmap;
+  src: url(fonts/NeueBit-Bold.woff);
+}
+
+@font-face {
+  font-family: machina;
+  src: url(fonts/NeueMachina-Black.woff);
+}
+
+@font-face {
+	font-family: glamy;
+	src: url(fonts/glamy-regular.woff);
+}
+
+@font-face {
+	font-family: fluro;
+	src: url(fonts/fluro-semibold.woff);
+}
+
+/*ANIMATIONS*/
+/*-----------------------------------------------*/
+@keyframes funtime {
+	0%   {background-color: #ff0080; }
+    33%  {background-color: #ffff00;}
+    66%  {background-color: #ff4400;}
+    100% {background-color: #91ff00; }
+}
+
+@-webkit-keyframes funtime {
+	0%   {background-color: #ff0080; }
+    33%  {background-color: #ffff00;}
+    66%  {background-color: #ff4400;}
+    100% {background-color: #91ff00; }
+}
+
+
+@keyframes title {
+	0%   {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
+    50%  {text-shadow: 0 0 100px #000000, 0 0 100px #000000;}
+    100%  {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
+}
+
+@-webkit-keyframes title {
+	0%   {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
+    50%  {text-shadow: 0 0 100px #000000, 0 0 100px #000000;}
+    100%  {text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;}
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+
+
+/*DESKTOP STYLING*/
+/*-----------------------------------------------*/
+
+
+h1 {
+	font-size:100px;
+	font-family: bitmap, helvetica;
+	position: absolute;
+	z-index: 20;
+	width: 40vw;
+	margin-left: 30vw;
+	margin-top: 20vh;
+}
+
+h2 {
+	margin: 0 auto;
+	font-family:  helvetica;
+	font-size: 50px;
+	color: #91ff00;
+}
+
+h5 {
+	margin: 0 auto;
+	font-family: helvetica;
+	font-size: 25px;
+}
+
+.dg.ac {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	z-index: 2 !important; /* TODO Solve this in HTML */
+}
+
+canvas {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: -2;
+}
+
+
+body, html {
+	margin: 0;
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+
+#title {
+	font-size:100px;
+	font-family: bitmap, helvetica;
+	position: fixed;
+	z-index: 20;
+    animation: title 10s infinite;
+    padding: 50px;
+}
+
+button {
+	background-color: white;
+	border: black 3px solid;
+	border-radius: 50%;
+	font-family: fluro, helvetica;
+	font-size: 4vh;
+}
+
+
+#bt1 {
+	width: 400px;
+	height: 300px;
+	margin-top: 60vh;
+	margin-left: 50vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt1:hover{
+	background-color: blue;
+	color: white;
+}
+
+#bt2 {
+	width: 600px;
+	height: 600px;
+	margin-top: 5vh;
+	margin-left: 20vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt2:hover{
+	color: white;
+	background-color: magenta;
+}
+
+#bt3 {
+	width: 400px;
+	height: 200px;
+	margin-top: 20vh;
+	margin-left: 70vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+/*#bt3:hover {
+	animation: funtime 0.3s infinite;
+
+}*/
+
+/*OTHER PAGES*/
+
+#container {
+/*	margin-left: 45vw;
+	margin-top: 45vh;*/
+	margin: 0 auto;
+	z-index: 10;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	position: absolute;
+
+}
+
+
+
+/*WORK*/
+/*-----------------------------------------------*/
+
+.draggable {
+	cursor: move;
+/*	z-index: 100;*/
+	position: absolute;
+	border: 10px black solid;
+	width: 50vw;
+	height: 50vh;
+	border-radius: 10px;
+	z-index: 100;
+	margin: 10px;
+	padding: 10px;
+	overflow-x: hidden; /* Hide horizontal scrollbar */
+	overflow-y: scroll; /* Add vertical scrollbar */
+	background-color: white;
+
+}
+
+li:hover {
+	text-decoration: none;
+	text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;
+}
+
+#twenty {
+	margin-top: 20%;
+	margin-left: 10%;
+	background-color: white;
+	display: none;
+}
+
+
+#facefilters {
+	margin-top: 20%;
+	margin-left: 40%;
+	background-color: white;
+	display: none;
+}
+
+
+img {
+	width: 300px;
+}
+
+.close_button {
+	border-radius: 50%;
+	background-color: #91ff00;
+	width: 40px;
+	height: 40px;
+	position: fixed;
+}
+
+.close_button:hover {
+	background-color: black;
+}
+
+
+/*SCROLLBAR*/
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #91ff00;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+
+
+/*HOVER STATES*/
+/*-----------------------------------------------*/
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	text-shadow: 0 0 50px #91ff00, 0 0 50px #91ff00;
+}
+
+a:active {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+
+
+/*MEDIA QUERIES*/
+/*-----------------------------------------------*/
+
+
+/*MOBILE SIZE*/
+@media only screen  (max-width: 375px){
+.dg.ac {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	z-index: 2 !important; 
+}
+
+canvas {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: -2;
+}
+
+
+body {
+	margin: 0;
+/*	background-color: transparent;
+*/	overflow: hidden;
+}
+
+#title {
+	font-size: 50px;
+	font-family: bitmap, helvetica;
+	position: absolute;
+	z-index: 20;
+    animation: title 10s infinite;
+}
+
+button {
+	background-color: white;
+	border: black 3px solid;
+	border-radius: 50%;
+	font-family: bitmap, helvetica;
+	font-size: 20px;
+}
+
+#user-side {
+	z-index: 200;
+}
+
+
+#bt1 {
+	width: 100px;
+	height: 70px;
+	margin-top: 60vh;
+	margin-left: 50vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt1:hover{
+	background-color: blue;
+	color: white;
+}
+
+#bt2 {
+	width: 200px;
+	height: 200px;
+	margin-top: 5vh;
+	margin-left: 20vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt2:hover{
+	color: white;
+	background-color: magenta;
+}
+
+#bt3 {
+	width: 200px;
+	height: 100px;
+	margin-top: 20vh;
+	margin-left: 70vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt3:hover {
+	animation: funtime 0.3s infinite;
+
+}
+
+
+
+}
+
+/*TABLET SIZE*/
+@media only screen (max-width: 1398px) {
+	body {
+	margin: 0;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+#title {
+	font-size:100px;
+	font-family: bitmap, helvetica;
+	position: absolute;
+	z-index: 20;
+    animation: title 10s infinite;
+}
+
+button {
+	background-color: white;
+	border: black 3px solid;
+	border-radius: 50%;
+	font-family: bitmap, helvetica;
+	font-size: 100px;
+}
+
+#user-side {
+	z-index: 200;
+}
+
+
+#bt1 {
+	width: 300px;
+	height: 200px;
+	margin-top: 10vh;
+	margin-left: 70vw;
+	position: absolute;
+	background-color: transparent;
+
+}
+
+#bt1:hover{
+	background-color: blue;
+	color: white;
+}
+
+#bt2 {
+	width: 600px;
+	height: 600px;
+	margin-top: 20vh;
+	margin-left: 10vw;
+	position: absolute;
+	background-color: transparent;
+
+}
+
+#bt2:hover{
+	color: white;
+	background-color: magenta;
+}
+
+#bt3 {
+	width: 400px;
+	height: 200px;
+	margin-top: 60vh;
+	margin-left: 35vw;
+	position: absolute;
+	background-color: transparent;
+}
+
+#bt3:hover {
+	animation: funtime 0.3s infinite;
+
+}
+}
+
+
+/*CUSTOM CURSORS*/
+/*-----------------------------------------------*/
+
+
+/*YIN YANG*/
+ /** {cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym88.ani), url(https://cur.cursors-4u.net/symbols/sym-1/sym88.png), auto !important;}*/
+/** {cursor: url(sym88.gif), auto;}*/
+
+/*BEACH BALL CURSOR*/
+/* * {cursor: url(https://cur.cursors-4u.net/cursors/cur-7/cur704.ani), url(https://cur.cursors-4u.net/cursors/cur-7/cur704.png), auto !important;} */
+
+
+/*HELLO KITTY CURSOR*/
+ * {cursor: url(https://cur.cursors-4u.net/anime/ani-12/ani1133.ani), url(https://cur.cursors-4u.net/anime/ani-12/ani1133.png), auto !important;}
+

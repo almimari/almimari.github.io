@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>mari al-midhadi</title>		
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="shortcut icon" href="images/favicon.png">
+		<link type="text/css" rel="stylesheet" href="main.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	    <script src="js/jquery.js"></script> 
+
+	</head>
+
+	<body>
+
+<div id="user-side">
+		<div id="title">
+			mari <br>al-midhadi
+		</div>
+
+	<a href="funtime/"><button type="button" id="bt3">fun time</button></a>
+        
+</div>
+
+
+
+
+
+
+		<script type="module">
+
+			import * as THREE from '../build/three.module.js';
+
+			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
+
+			import { MTLLoader } from './jsm/loaders/MTLLoader.js';
+
+
+			let rotateY = 0;
+
+			let container;
+
+			let camera, scene, renderer;
+
+			let mouseX = 0;
+			let mouseY = 0;
+
+			let windowHalfX = window.innerWidth / 2;
+			let windowHalfY = window.innerHeight / 2;
+
+
+
+			let object;
+
+
+			init();
+			animate();
+
+
+
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera.position.z = 250;
+
+				// scene
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xffffff );
+
+				const ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+				scene.add( ambientLight );
+
+				const pointLight = new THREE.PointLight( 0xffffff, 0.8 );
+				camera.add( pointLight );
+				scene.add( camera );
+
+
+
+				// manager
+
+				function loadModel() {
+
+					object.traverse( function ( child ) {
+
+						if ( child.isMesh ) child.material.map = texture;
+
+
+					object.position.y = - 95;
+					scene.add( object );
+
+					 object.scale.set(20,20,20);
+					 object.rotation.set(0,0,0);
+					 object.position.set(0,0,0);  
+
+					} );
+
+
+
+
+
+				}
+
+				const manager = new THREE.LoadingManager( loadModel );
+
+				manager.onProgress = function ( item, loaded, total ) {
+
+					console.log( item, loaded, total );
+
+				};
+
+				// texture
+
+				const textureLoader = new THREE.TextureLoader( manager );
+				const texture = textureLoader.load( 'textures/uv_grid_opengl.jpeg' );
+
+
+				// model
+
+				function onProgress( xhr ) {
+
+					if ( xhr.lengthComputable ) {
+
+						const percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( 'model ' + Math.round( percentComplete, 2 ) + '% downloaded' );
+
+					}
+
+				}
+
+				function onError() {}
+
+
+
+
+// ATTEMPT #1 OF TRYING TO LOAD MATERIAL
+				// var loadOBJ = function(){
+
+				// var mtlLoader = new THREE.MTLLoader();
+				// mtlLoader.setPath( '/models/' );
+				// var url = "Zinc_Spinner.mtl";
+				// mtlLoader.load( url, function( materials ) {
+
+				// materials.preload();
+
+				// //Manager from ThreeJs to track a loader and its status
+				// var manager = new THREE.LoadingManager();
+				// //Loader for Obj from Three.js
+				// var loader = new THREE.OBJLoader( manager );
+
+				// loader.setMaterials( materials );
+				// loader.setPath( '/models/' );
+
+				// //Launch loading of the obj file, addNefertitiInScene is the callback when it's ready 
+				// loader.load( 'Zinc_Spinner.obj', addObjectInScene);
+
+				// }, onProgress, onError );
+
+
+				// };
+
+
+
+				const loader = new OBJLoader( manager);
+
+				new MTLLoader( manager )
+					.setPath( 'models/' )
+					.load( 'Zinc_Spinner.mtl', function ( materials ) {
+
+						materials.preload();
+					
+					//Manager from ThreeJs to track a loader and its status
+					var manager = new THREE.LoadingManager();
+					//Loader for Obj from Three.js
+					var loader = new THREE.OBJLoader( manager );
+
+					loader.setMaterials( materials );
+					loader.setPath( '/models/' );
+
+					});
+
+				loader.load( 'models/Zinc_Spinner.obj', function ( obj ) {
+
+					object = obj;
+
+
+				}, onProgress, onError );
+
+
+
+				//
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize );
+
+			}
+			render();
+			animate();
+
+			function onWindowResize() {
+
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function onDocumentMouseMove( event ) {
+
+				// mouseX = (event.clientX);
+				// mouseY = (event.clientY);
+				mouseY = ( event.clientY - windowHalfY ) / 2;
+				mouseX = ( event.clientX - windowHalfX ) / 2;
+
+			}
+
+			//
+
+			function render() {
+
+
+				// object.rotation.x += ( mouseX/object.rotation.x);
+				// object.rotation.y += ( mouseY/object.rotation.y);
+
+				camera.position.x += ( mouseX - camera.position.x ) * 1;
+				camera.position.y += ( - mouseY - camera.position.y ) * 1;
+
+				camera.lookAt( scene.position );
+
+				renderer.render( scene, camera );
+
+			}
+
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				rotateY += 0.02;
+
+				object.rotation.set(Math.PI / 2,rotateY,0);
+
+				render();
+
+			}
+			animate();
+
+
+
+		</script>
+
+	</body>
+</html>
