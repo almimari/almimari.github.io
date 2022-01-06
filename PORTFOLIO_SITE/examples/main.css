@@ -23,7 +23,7 @@
 
 @font-face {
 	font-family: syne;
-	src: url(fonts/Syne-ExtraBold.ttf);
+	src: url(fonts/Syne-Medium.ttf);
 }
 
 /*ANIMATIONS*/
@@ -127,7 +127,7 @@ body, html {
 }
 
 #title {
-	font-size:100px;
+	font-size:30px;
 	font-family: bitmap, helvetica;
 	position: fixed;
 	z-index: 20;
