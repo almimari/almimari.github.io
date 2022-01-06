@@ -127,12 +127,18 @@ body, html {
 }
 
 #title {
-	font-size:30px;
+	font-size:75px;
 	font-family: bitmap, helvetica;
 	position: fixed;
 	z-index: 20;
-    animation: title 10s infinite;
+/*    animation: title 10s infinite;*/
     padding: 50px;
+}
+
+#title:hover {
+  text-shadow: 2px 2px 5px #cfc7f2;
+
+
 }
 
 button {
