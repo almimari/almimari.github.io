@@ -21,6 +21,11 @@
 	src: url(fonts/fluro-semibold.woff);
 }
 
+@font-face {
+	font-family: syne;
+	src: url(fonts/Syne-ExtraBold.ttf);
+}
+
 /*ANIMATIONS*/
 /*-----------------------------------------------*/
 @keyframes funtime {
