@@ -128,7 +128,7 @@ body, html {
 
 #title {
 	font-size:75px;
-	font-family: bitmap, helvetica;
+	font-family: syne, helvetica;
 	position: fixed;
 	z-index: 20;
 /*    animation: title 10s infinite;*/
@@ -334,8 +334,8 @@ body {
 }
 
 #title {
-	font-size: 50px;
-	font-family: bitmap, helvetica;
+	font-size: 20px;
+	font-family: syne, helvetica;
 	position: absolute;
 	z-index: 20;
     animation: title 10s infinite;
