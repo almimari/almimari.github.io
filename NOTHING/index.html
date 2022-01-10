@@ -20,6 +20,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script src="title-scroll.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 </head>
 
@@ -31,9 +34,37 @@
 
 <h3>We make things. </h3>
 
-<a href="contact.html">Contact us (if you <em>have</em> to)</a>
+<a href="contact.html" id="contact">Contact us (if you <em>have</em> to)</a>
 
 
-  <script src="js/scripts.js"></script>
+  <script>
+
+
+    $(document).ready(function {
+      $('#contact').mouseIn(function {
+        $('body').css("background-color", "black");
+        $(*).css("color", "white");
+      });
+
+    });
+
+
+  </script>
+
+  <style>
+/*
+  body {
+    background-color:  black;
+  }
+
+  * {
+    color:  white;
+  }
+
+*/
+
+  </style>
+<script src="title-scroll.js" data-start="50" data-speed="250"></script>
+
 </body>
 </html>
