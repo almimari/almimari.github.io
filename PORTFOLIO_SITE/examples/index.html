@@ -69,12 +69,12 @@
 				// scene
 
 				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0xffffff );
+				scene.background = new THREE.Color( 0xffffff);
 
 				const ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
 				scene.add( ambientLight );
 
-				const pointLight = new THREE.PointLight( 0xffffff, 0.8 );
+				const pointLight = new THREE.PointLight( 0xcfc7f2, 0.8 );
 				camera.add( pointLight );
 				scene.add( camera );
 
@@ -92,7 +92,11 @@
 					object.position.y = - 95;
 					scene.add( object );
 
-					 object.scale.set(20,20,20);
+
+					//BORROWED CODE
+
+
+					 object.scale.set(25,25,25);
 					 object.rotation.set(0,0,0);
 					 object.position.set(0,0,0);  
 
@@ -115,7 +119,10 @@
 				// texture
 
 				const textureLoader = new THREE.TextureLoader( manager );
-				const texture = textureLoader.load( 'textures/uv_grid_opengl.jpeg' );
+				const texture = textureLoader.load( 'textures/lavender.jpg' );
+
+				//material
+				const material = new THREE.MeshBasicMaterial( {color: 0xFF6347, wireframe: true});
 
 
 				// model
@@ -166,21 +173,23 @@
 
 				const loader = new OBJLoader( manager);
 
-				new MTLLoader( manager )
-					.setPath( 'models/' )
-					.load( 'Zinc_Spinner.mtl', function ( materials ) {
+				// new MTLLoader( manager )
+				// 	.setPath( 'models/' )
+				// 	.load( 'Zinc_Spinner.mtl', function ( materials ) {
 
-						materials.preload();
+				// 		materials.preload();
 					
-					//Manager from ThreeJs to track a loader and its status
-					var manager = new THREE.LoadingManager();
-					//Loader for Obj from Three.js
-					var loader = new THREE.OBJLoader( manager );
+				// 	//Manager from ThreeJs to track a loader and its status
+				// 	var manager = new THREE.LoadingManager();
+				// 	//Loader for Obj from Three.js
+				// 	var loader = new THREE.OBJLoader( manager );
 
-					loader.setMaterials( materials );
-					loader.setPath( '/models/' );
+				// 	loader.setMaterials( materials );
+				// 	loader.setPath( '/models/' );
 
-					});
+				// 	});
+
+				var ship_material = new THREE.MeshBasicMaterial( { color: 0x444444 } );
 
 				loader.load( 'models/Zinc_Spinner.obj', function ( obj ) {
 
@@ -193,7 +202,9 @@
 
 				//
 
-				renderer = new THREE.WebGLRenderer();
+
+				renderer = new THREE.WebGLRenderer({ alpha: true });
+				renderer.setClearColor( 0xffffff, 0);
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				container.appendChild( renderer.domElement );
@@ -253,7 +264,7 @@
 				requestAnimationFrame( animate );
 				rotateY += 0.02;
 
-				object.rotation.set(Math.PI / 2,rotateY,0);
+				object.rotation .set(Math.PI / 2,rotateY,0);
 
 				render();
 
