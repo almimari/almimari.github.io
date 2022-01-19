@@ -21,50 +21,158 @@
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="title-scroll.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+ <style>
+
+  /*FONTS*/
+  @font-face {
+
+    font-family: "Outward";
+    src: url("fonts/outward-block-webfont.woff2") format("woff2"),
+         url("fonts/outward-block-webfont.woff") format("woff");
+
+
+  }
+
+
+ @font-face {
+
+    font-family: "Karrik";
+    src: url("fonts/Reglo-Bold.otf") format("otf");
+
+
+  }
+
+  @font-face {
+
+    font-family: "Reglo";
+    src: url("fonts/Karrik-Regular.otf") format("otf");
+
+
+  }
+
+
+
+
+
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  h1 {
+    font-family:  karrik;
+    font-size: 100px;
+    mix-blend-mode: difference;
+  }
+
+  h3 {
+    font-family:  karrik;
+    mix-blend-mode: difference;
+  }
+
+  a {
+    font-family:  karrik;
+    mix-blend-mode: difference;
+    color:  white;
+  }
+
+  html {
+    overflow: hidden;
+    width: 100vw;
+    height:  100vh;
+    margin-top:  0px;
+  }
+
+ #content {
+  margin-bottom: 100px;
+  padding: 10px;
+ }
+
+
+
+  #hex {
+    font-family:  karrik;
+    font-size: 20vw;
+    color:  white;
+    position:  absolute;
+    z-index: 10;
+    margin-bottom: 0px;
+  }
+
+  #all {
+  height:100vh;
+  width:100vw;
+}
+
+  body {
+    background-color: black;
+    color:  white;
+    overflow-y:  hidden;
+    overflow-x: scroll;
+  }
+
+  </style>
 
 
 </head>
 
+
+
+
+
+
 <body>
+  <div id="all">
 
-<h1> 
-  Nothing Projects
-</h1>
+<div id="content">
 
-<h3>We make things. </h3>
+    <h1> Nothing Projects</h1><br>
 
-<a href="contact.html" id="contact">Contact us (if you <em>have</em> to)</a>
+    <h3>We make things.</h3><br>
 
+    <a href="contact.html" id="contact">Contact us (if you <em>have</em> to)</a>
+</div>
+
+    
+    <div id="picker" style="border-style:solid;     margin-bottom: 0px; border-width:2px; height:20vh; width:100%;    margin-bottom: 0px;"></div>
+    <br/>
+    <div id="hex"></div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </div>
+
+
+
+
+
+
+
+
+<script src="title-scroll.js" data-start="50" data-speed="250"></script>
 
   <script>
 
 
-    $(document).ready(function {
-      $('#contact').mouseIn(function {
+    $(document).ready(function () {
+
+
+      $('#contact').hover(function () {
         $('body').css("background-color", "black");
-        $(*).css("color", "white");
+        $('body').css("color", "white");
       });
+
 
     });
 
 
   </script>
 
-  <style>
-/*
-  body {
-    background-color:  black;
-  }
-
-  * {
-    color:  white;
-  }
-
-*/
-
-  </style>
-<script src="title-scroll.js" data-start="50" data-speed="250"></script>
-
 </body>
 </html>
+
+
+
+
+
+
+
