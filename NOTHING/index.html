@@ -29,38 +29,7 @@
 
 /*ADD MOON AND SUN ICON TO INVERT PAGE
 MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
-HELVETICA NEUE FOR NOTHING PROJECTS 
-COURIER NEUE FOR CONTACT US, NOT CAPITALIZED, FOLLOW SLIDES
-MAKE CONTACT PAGE DIRECT MAIL*/
-
-  /*FONTS*/
-  @font-face {
-
-    font-family: "Outward";
-    src: url("fonts/outward-block-webfont.woff2") format("woff2"),
-         url("fonts/outward-block-webfont.woff") format("woff");
-
-
-  }
-
-
-/* @font-face {
-
-    font-family: "Karrik";
-    src: url("fonts/Reglo-Bold.otf") format("otf");
-
-
-  }
 */
-  @font-face {
-
-    font-family: "Reglo";
-    src: url("fonts/Karrik-Regular.otf") format("otf");
-
-
-  }
-
-
 
 
 
@@ -116,16 +85,30 @@ MAKE CONTACT PAGE DIRECT MAIL*/
 }
 
 
-  #moon {
+  #icons {
     right:  0px;
     top:  0px;
-    padding:  20px;
+    padding: 50px;
     position:  fixed;
+    width: 10vw;
+  }
+
+  #moon {
+    float:  left;
   }
 
   #moon:hover {
     cursor:  pointer;
   }
+
+  #sun {
+    float:  left;
+  }
+
+  #sun:hover {
+    cursor:  pointer;
+  }
+
 
   body {
     background-color: white;
@@ -176,19 +159,40 @@ MAKE CONTACT PAGE DIRECT MAIL*/
 
    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nothing@nothingprojects.xyz&su=Let's work&body=Type something" target="_blank" id="contact">(contact us)</a>   
 </div>
-  
-  <div id="moon">
 
-      <?xml version="1.0" encoding="UTF-8"?>
-      <svg width="3vw" height="100%" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
-       <path d="m572.39 343.49c1.1953-4.1055 0.84375-8.5117-0.98828-12.379-1.8281-3.8672-5.0156-6.9297-8.9492-8.6094-3.9375-1.6797-8.3516-1.8555-12.41-0.5-32.727 11.082-68.008 12.207-101.38 3.2344-33.367-8.9727-63.324-27.637-86.082-53.637-22.762-26-37.297-58.164-41.773-92.426s1.3086-69.082 16.621-100.05c1.8945-3.8516 2.3047-8.2656 1.1562-12.398-1.1484-4.1367-3.7734-7.7031-7.3828-10.027-3.6055-2.3281-7.9414-3.2461-12.184-2.582-56.582 8.8477-107.74 38.727-143.25 83.66-35.512 44.93-52.758 101.61-48.289 158.71 4.4688 57.098 30.32 110.4 72.387 149.27 42.066 38.863 97.25 60.418 154.52 60.359 48.953-0.22266 96.543-16.141 135.78-45.406 39.238-29.27 68.059-70.348 82.223-117.21z"/>
-      </svg>
 
-  </div>
+<div id="icons">
+    <div id="moon">
 
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg width="90%" height="90%" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+         <path d="m572.39 343.49c1.1953-4.1055 0.84375-8.5117-0.98828-12.379-1.8281-3.8672-5.0156-6.9297-8.9492-8.6094-3.9375-1.6797-8.3516-1.8555-12.41-0.5-32.727 11.082-68.008 12.207-101.38 3.2344-33.367-8.9727-63.324-27.637-86.082-53.637-22.762-26-37.297-58.164-41.773-92.426s1.3086-69.082 16.621-100.05c1.8945-3.8516 2.3047-8.2656 1.1562-12.398-1.1484-4.1367-3.7734-7.7031-7.3828-10.027-3.6055-2.3281-7.9414-3.2461-12.184-2.582-56.582 8.8477-107.74 38.727-143.25 83.66-35.512 44.93-52.758 101.61-48.289 158.71 4.4688 57.098 30.32 110.4 72.387 149.27 42.066 38.863 97.25 60.418 154.52 60.359 48.953-0.22266 96.543-16.141 135.78-45.406 39.238-29.27 68.059-70.348 82.223-117.21z"/>
+        </svg>
+
+    </div>
+
+
+    <div id="sun">
+          <?xml version="1.0" encoding="UTF-8"?>
+          <svg width="100%" height="100%" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+           <g>
+            <path d="m350 122.52c-86.777 0-157.47 70.695-157.47 157.47s70.695 157.47 157.47 157.47 157.47-70.695 157.47-157.47-70.695-157.47-157.47-157.47z" fill-rule="evenodd"/>
+            <path d="m349.75 472.29c-9.6445 0.13281-17.355 8.0547-17.246 17.699v35.008c0 23.34 35.008 23.34 35.008 0v-35.008c0.11328-9.8438-7.918-17.844-17.762-17.699z"/>
+            <path d="m349.75 17.238c-9.668 0.13281-17.391 8.0938-17.246 17.762v35.008c0 23.34 35.008 23.34 35.008 0v-35.008c0.14844-9.8711-7.8906-17.91-17.762-17.762z"/>
+            <path d="m105.01 262.49c-23.34 0-23.34 35.008 0 35.008h35.008c23.34 0 23.34-35.008 0-35.008z"/>
+            <path d="m559.99 262.49c-23.34 0-23.34 35.008 0 35.008h35.008c23.34 0 23.34-35.008 0-35.008z"/>
+            <path d="m201.18 410.79c-4.5625 0.13281-8.8984 2.0234-12.078 5.2969l-24.738 24.805c-17.578 16.484 8.2539 42.316 24.738 24.738l24.805-24.738c11.555-11.125 3.3047-30.637-12.723-30.102z"/>
+            <path d="m522.91 89.062c-4.5625 0.13281-8.8984 2.0234-12.078 5.2969l-24.738 24.805c-17.57 16.484 8.2539 42.309 24.738 24.738l24.805-24.738c11.555-11.125 3.3047-30.637-12.723-30.098z"/>
+            <path d="m176.57 89.062c-15.773-0.066406-23.562 19.148-12.207 30.098l24.738 24.738c16.492 16.539 41.297-8.1992 24.805-24.738l-24.805-24.805c-3.293-3.3828-7.8086-5.293-12.531-5.2969z"/>
+            <path d="m498.3 410.79c-15.773-0.066407-23.562 19.148-12.207 30.102l24.738 24.738c16.492 16.535 41.297-8.2031 24.805-24.738l-24.805-24.805c-3.293-3.3828-7.8086-5.293-12.531-5.2969z"/>
+           </g>
+          </svg>
+
+    </div>
+</div>
 
     
-    <div id="picker" style="margin-bottom: 30vh; /*border-width:1px;*/ width:100vw; 
+    <div id="picker" style="margin-bottom: 30vh; /*border-width:1px;*/ width:100%; 
     bottom: 30px; position: fixed;"></div>
     <br/>
 <!--     <div id="hex"></div>
@@ -209,15 +213,9 @@ MAKE CONTACT PAGE DIRECT MAIL*/
     $(document).ready(function () {
 
 
-      $('#moon').mouseenter(function () {
-        $(this).css("fill", "white");
-        $('body').css("background-color", "black");
-        $('body').css("color", "white");
-        $('#contact').css("color", "white");
-      });
-
-      $('#moon').mouseleave(function () {
+      $('#sun').click(function () {
         $(this).css("fill", "black");
+        $('#moon').css("fill", "black");
         $('body').css("background-color", "white");
         $('body').css("color", "black");
       });
@@ -225,6 +223,7 @@ MAKE CONTACT PAGE DIRECT MAIL*/
 
       $('#moon').click(function () {
         $(this).css("fill", "white");
+        $('#sun').css("fill", "white");
         $('body').css("background-color", "black");
         $('body').css("color", "white");
       });

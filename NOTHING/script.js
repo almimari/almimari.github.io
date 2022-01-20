@@ -52,7 +52,7 @@ $(document).ready(function()
 	function displayBar()
 	{
 		var hex=dechex(r)+dechex(g)+dechex(b);
-		$("#picker").append('<div id="'+hex+'" style="float:left;background-color:#'+hex+';width:0.02vw; height:10vh" onMouseover="$(\'#contact\').css(\'color\',\'#\'+$(this).attr(\'id\'));$(\'#hex\').html(\'#\'+$(this).attr(\'id\')+\'<br/>\');"></div>');
+		$("#picker").append('<div id="'+hex+'" style="float:left;background-color:#'+hex+';width:0.07vw; height:5vh" onMouseover="$(\'#contact\').css(\'color\',\'#\'+$(this).attr(\'id\'));$(\'#hex\').html(\'#\'+$(this).attr(\'id\')+\'<br/>\');"></div>');
 	}
 	
 	
