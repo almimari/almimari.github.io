@@ -18,12 +18,20 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
+  <link rel="stylesheet" href="https://use.typekit.net/dgq4uex.css">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="title-scroll.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
  <style>
+
+
+
+/*ADD MOON AND SUN ICON TO INVERT PAGE
+MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
+HELVETICA NEUE FOR NOTHING PROJECTS 
+COURIER NEUE FOR CONTACT US, NOT CAPITALIZED, FOLLOW SLIDES
+MAKE CONTACT PAGE DIRECT MAIL*/
 
   /*FONTS*/
   @font-face {
@@ -60,8 +68,8 @@
   * { margin:0; padding:0; box-sizing:border-box; }
 
   h1 {
-    font-family:  times new roman;
-    font-size: 10vh;
+    font-family:  helvetica neue, helvetica;
+    font-size: 5vh;
 /*    mix-blend-mode: difference;
 */  }
 
@@ -71,9 +79,12 @@
   }
 
   a {
-    font-family:   times new roman;
+
     mix-blend-mode: difference;
     color:  white;
+    font-family: courier-std,monospace;
+    font-weight: 400;
+    font-style: normal;
   }
 
   html {
@@ -103,6 +114,18 @@
   height:100vh;
   width:100vw;
 }
+
+
+  #moon {
+    right:  0px;
+    top:  0px;
+    padding:  20px;
+    position:  fixed;
+  }
+
+  #moon:hover {
+    cursor:  pointer;
+  }
 
   body {
     background-color: white;
@@ -148,23 +171,30 @@
 
 <div id="content">
 
-    <h1> Nothing Projects</h1><br><br><br>
+    <h1> NOTHING Projects</h1><br><br><br>
 
-    <h3>We make things.</h3><br>
 
-    <a href="contact.html" id="contact">Contact us (if you <em>have</em> to)</a>
+   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nothing@nothingprojects.xyz&su=Let's work&body=Type something" target="_blank" id="contact">(contact us)</a>   
 </div>
+  
+  <div id="moon">
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <svg width="3vw" height="100%" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+       <path d="m572.39 343.49c1.1953-4.1055 0.84375-8.5117-0.98828-12.379-1.8281-3.8672-5.0156-6.9297-8.9492-8.6094-3.9375-1.6797-8.3516-1.8555-12.41-0.5-32.727 11.082-68.008 12.207-101.38 3.2344-33.367-8.9727-63.324-27.637-86.082-53.637-22.762-26-37.297-58.164-41.773-92.426s1.3086-69.082 16.621-100.05c1.8945-3.8516 2.3047-8.2656 1.1562-12.398-1.1484-4.1367-3.7734-7.7031-7.3828-10.027-3.6055-2.3281-7.9414-3.2461-12.184-2.582-56.582 8.8477-107.74 38.727-143.25 83.66-35.512 44.93-52.758 101.61-48.289 158.71 4.4688 57.098 30.32 110.4 72.387 149.27 42.066 38.863 97.25 60.418 154.52 60.359 48.953-0.22266 96.543-16.141 135.78-45.406 39.238-29.27 68.059-70.348 82.223-117.21z"/>
+      </svg>
+
+  </div>
+
 
     
-    <div id="picker" style="margin-bottom: 0px; /*border-width:1px;*/ height:15vh; width:100vw; 
-    bottom: 0px; position: fixed;"></div>
+    <div id="picker" style="margin-bottom: 30vh; /*border-width:1px;*/ width:100vw; 
+    bottom: 30px; position: fixed;"></div>
     <br/>
 <!--     <div id="hex"></div>
  -->    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </div>
-
-
 
 
 
@@ -179,10 +209,24 @@
     $(document).ready(function () {
 
 
-      $('#contact').hover(function () {
+      $('#moon').mouseenter(function () {
+        $(this).css("fill", "white");
         $('body').css("background-color", "black");
         $('body').css("color", "white");
-        $('h3').css("color", "white");
+        $('#contact').css("color", "white");
+      });
+
+      $('#moon').mouseleave(function () {
+        $(this).css("fill", "black");
+        $('body').css("background-color", "white");
+        $('body').css("color", "black");
+      });
+
+
+      $('#moon').click(function () {
+        $(this).css("fill", "white");
+        $('body').css("background-color", "black");
+        $('body').css("color", "white");
       });
 
 
