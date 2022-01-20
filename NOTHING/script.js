@@ -4,7 +4,9 @@ $(document).ready(function()
 	r = 255;
 	g = 0;
 	b = 0;
-	
+	let intViewportWidth = window.innerWidth;
+	let pickerWidth = (intViewportWidth/255);
+
 	while(b<255)
 	{
 		b++;
@@ -52,7 +54,7 @@ $(document).ready(function()
 	function displayBar()
 	{
 		var hex=dechex(r)+dechex(g)+dechex(b);
-		$("#picker").append('<div id="'+hex+'" style="float:left;background-color:#'+hex+';width:0.07vw; height:5vh" onMouseover="$(\'#contact\').css(\'color\',\'#\'+$(this).attr(\'id\'));$(\'#hex\').html(\'#\'+$(this).attr(\'id\')+\'<br/>\');"></div>');
+		$("#picker").append('<div id="'+hex+'" style="float:left;background-color:#'+hex+';width:'+intViewportWidth+'; height:"2vh" onMouseover="$(\'#contact\').css(\'color\',\'#\'+$(this).attr(\'id\'));$(\'#hex\').html(\'#\'+$(this).attr(\'id\')+\'<br/>\');"></div>');
 	}
 	
 	
