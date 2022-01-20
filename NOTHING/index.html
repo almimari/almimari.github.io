@@ -36,14 +36,14 @@
   }
 
 
- @font-face {
+/* @font-face {
 
     font-family: "Karrik";
     src: url("fonts/Reglo-Bold.otf") format("otf");
 
 
   }
-
+*/
   @font-face {
 
     font-family: "Reglo";
@@ -60,18 +60,18 @@
   * { margin:0; padding:0; box-sizing:border-box; }
 
   h1 {
-    font-family:  karrik;
-    font-size: 100px;
-    mix-blend-mode: difference;
-  }
+    font-family:  times new roman;
+    font-size: 10vh;
+/*    mix-blend-mode: difference;
+*/  }
 
   h3 {
-    font-family:  karrik;
-    mix-blend-mode: difference;
+    font-family:  times new roman;
+    color:  black;
   }
 
   a {
-    font-family:  karrik;
+    font-family:   times new roman;
     mix-blend-mode: difference;
     color:  white;
   }
@@ -85,13 +85,13 @@
 
  #content {
   margin-bottom: 100px;
-  padding: 10px;
+  padding: 50px;
  }
 
 
 
   #hex {
-    font-family:  karrik;
+    font-family:   times new roman;
     font-size: 20vw;
     color:  white;
     position:  absolute;
@@ -105,11 +105,33 @@
 }
 
   body {
-    background-color: black;
-    color:  white;
+    background-color: white;
+/*    background-image:  url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Checkerboard_pattern.svg/2048px-Checkerboard_pattern.svg.png') ;*/
+    color:  black;
     overflow-y:  hidden;
     overflow-x: scroll;
   }
+
+
+
+/*---------------MOBILE STYLE SHEET---------------*/
+
+  @media (min-width: 481px) and (max-width: 767px) {
+  
+ 
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+
+
+
+
+
 
   </style>
 
@@ -126,7 +148,7 @@
 
 <div id="content">
 
-    <h1> Nothing Projects</h1><br>
+    <h1> Nothing Projects</h1><br><br><br>
 
     <h3>We make things.</h3><br>
 
@@ -134,10 +156,11 @@
 </div>
 
     
-    <div id="picker" style="border-style:solid;     margin-bottom: 0px; border-width:2px; height:20vh; width:100%;    margin-bottom: 0px;"></div>
+    <div id="picker" style="margin-bottom: 0px; /*border-width:1px;*/ height:15vh; width:100vw; 
+    bottom: 0px; position: fixed;"></div>
     <br/>
-    <div id="hex"></div>
-    <script type="text/javascript" src="js/jquery.js"></script>
+<!--     <div id="hex"></div>
+ -->    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </div>
 
@@ -159,6 +182,7 @@
       $('#contact').hover(function () {
         $('body').css("background-color", "black");
         $('body').css("color", "white");
+        $('h3').css("color", "white");
       });
 
 
