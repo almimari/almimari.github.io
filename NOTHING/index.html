@@ -69,31 +69,64 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
  }
 
 #spectrum-container {
-  width:  100vw;
-  height: 2vh;
+  width:  100%;
+  height: 2%;
   position:  fixed;
   background-image:  url("img/spectrum.png");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   z-index: 10;
-  bottom: 10vh; 
+  bottom: 10%; 
   border: 1px solid black; 
 }
 
-  #hex {
+/*  #hex {
     font-family:   times new roman;
     font-size: 20vw;
     color:  white;
     position:  absolute;
     z-index: 10;
     margin-bottom: 0px;
-  }
+  }*/
 
   #all {
   height:100vh;
-  width:100vw;
+  width:60vw;
+  float:  left;
+  border:  1px solid black;
 }
+
+
+  #checkerboard {
+    height:  100vh;
+    width:  40vw;
+    float:  left;
+    display:  inline-block;
+  }
+
+
+  .draggable {
+    width: 33.33%;
+    height: 20%;
+    z-index:  15;
+    border:  1px solid black;
+    float:  left;
+  }
+
+  .black {
+    background-color:  black;
+   float:  left;
+    display:  inline-block;
+
+  }
+
+  .white {
+    background-color:  white;
+    float:  left;
+    display:  inline-block;
+
+  }
 
 
   #icons {
@@ -220,6 +253,36 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
 
 
 
+<!-- CHECKERBOARD -->
+
+<div id="checkerboard">
+
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black"></div>
+    <div class="draggable" class="white"></div>
+
+</div>
 
 
 
@@ -234,8 +297,8 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
       $('#sun').click(function () {
         $(this).css("fill", "black");
         $('#moon').css("fill", "black");
-        $('body').css("background-color", "white");
-        $('body').css("color", "black");
+        $('#all').css("background-color", "white");
+        $('#all').css("color", "black");
         $('#spectrum-container').css("border", "1px solid black")
       });
 
@@ -243,8 +306,8 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
       $('#moon').click(function () {
         $(this).css("fill", "white");
         $('#sun').css("fill", "white");
-        $('body').css("background-color", "black");
-        $('body').css("color", "white");
+        $('#all').css("background-color", "black");
+        $('#all').css("color", "white");
         $('#spectrum-container').css("border", "1px solid white")
       });
 
