@@ -68,7 +68,18 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
   padding: 50px;
  }
 
-
+#spectrum-container {
+  width:  100vw;
+  height: 2vh;
+  position:  fixed;
+  background-image:  url("img/spectrum.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  z-index: 10;
+  bottom: 10vh; 
+  border: 1px solid black; 
+}
 
   #hex {
     font-family:   times new roman;
@@ -88,9 +99,10 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
   #icons {
     right:  0px;
     top:  0px;
-    padding: 50px;
+    padding-top: 50px;
+    padding-right: 50px;
     position:  fixed;
-    width: 10vw;
+    width:100px;
   }
 
   #moon {
@@ -191,10 +203,16 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
     </div>
 </div>
 
-    
-    <div id="picker" style="margin-bottom: 10vh; border: 1px solid black; width:100vw; 
-    bottom: 30px; position: fixed;"></div>
-    <br/>
+   
+
+   <div id="spectrum-container">
+<!--          <img src='img/spectrum.png' id="spectrum">]
+ -->    </div>
+
+
+
+<!--     <div id="picker" style="margin-bottom: 10vh; border: 1px solid black; width:100vw; 
+    bottom: 30px; position: fixed;"></div> -->
 <!--     <div id="hex"></div>
  -->    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="script.js"></script>
@@ -218,6 +236,7 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
         $('#moon').css("fill", "black");
         $('body').css("background-color", "white");
         $('body').css("color", "black");
+        $('#spectrum-container').css("border", "1px solid black")
       });
 
 
@@ -226,6 +245,7 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
         $('#sun').css("fill", "white");
         $('body').css("background-color", "black");
         $('body').css("color", "white");
+        $('#spectrum-container').css("border", "1px solid white")
       });
 
 
