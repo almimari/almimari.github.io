@@ -15,23 +15,16 @@
   <meta property="og:description" content="A simple HTML5 Template for new projects."> -->
   <meta property="og:image" content="image.png">
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!--   <link rel="icon" href="/favicon.ico"> -->
+<!--   <link rel="icon" href="/favicon.svg" type="image/svg+xml">-->
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="https://use.typekit.net/dgq4uex.css">
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js" type="text/javascript"></script>
+
   <script src="title-scroll.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
  <style>
-
-
-
-/*ADD MOON AND SUN ICON TO INVERT PAGE
-MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
-*/
-
-
 
 
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -114,18 +107,17 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
     float:  left;
   }
 
-  .black {
-    background-color:  black;
-   float:  left;
-    display:  inline-block;
+  .draggable:hover {
+    cursor:  move;
+  }
 
+
+  .black {
+    background-color:  #000000;
   }
 
   .white {
-    background-color:  white;
-    float:  left;
-    display:  inline-block;
-
+    background-color:  #ffffff;
   }
 
 
@@ -140,6 +132,7 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
 
   #moon {
     float:  left;
+    fill:  white;
   }
 
   #moon:hover {
@@ -148,6 +141,7 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
 
   #sun {
     float:  left;
+    fill:  white;
   }
 
   #sun:hover {
@@ -158,7 +152,6 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
   body {
     background-color: white;
 /*    background-image:  url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Checkerboard_pattern.svg/2048px-Checkerboard_pattern.svg.png') ;*/
-    color:  black;
     overflow-y:  hidden;
     overflow-x: scroll;
   }
@@ -202,7 +195,7 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
     <h1> NOTHING Projects</h1><br><br><br>
 
 
-   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nothing@nothingprojects.xyz&su=Let's work&body=Type something" target="_blank" id="contact">(contact us)</a>   
+   <a href="mailto:nothing@nothingprojects.xyz" target="_blank" id="contact">(contact us)</a>   
 </div>
 
 
@@ -238,16 +231,14 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
 
    
 
-   <div id="spectrum-container">
-<!--          <img src='img/spectrum.png' id="spectrum">]
- -->    </div>
+   <div id="spectrum-container"></div>
 
 
 
 <!--     <div id="picker" style="margin-bottom: 10vh; border: 1px solid black; width:100vw; 
     bottom: 30px; position: fixed;"></div> -->
 <!--     <div id="hex"></div>
- -->    <script type="text/javascript" src="js/jquery.js"></script>
+ -->  
     <script type="text/javascript" src="script.js"></script>
   </div>
 
@@ -257,30 +248,30 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
 
 <div id="checkerboard">
 
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
-    <div class="draggable" class="black"></div>
-    <div class="draggable" class="white"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
+    <div class="draggable" class="black" style="background-color: #000000;"></div>
+    <div class="draggable" class="white" style="background-color: #ffffff;"></div>
 
 </div>
 
@@ -288,17 +279,19 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
 
 <script src="title-scroll.js" data-start="50" data-speed="250"></script>
 
-  <script>
+  <script type="text/javascript">
 
 
     $(document).ready(function () {
 
 
       $('#sun').click(function () {
-        $(this).css("fill", "black");
-        $('#moon').css("fill", "black");
+        $(this).css("fill", "white");
+        $('#moon').css("fill", "white");
         $('#all').css("background-color", "white");
+        $('#checkerboard').css("background-color", "white");
         $('#all').css("color", "black");
+        $('.draggable').css("border", "1px solid black");
         $('#spectrum-container').css("border", "1px solid black")
       });
 
@@ -308,8 +301,13 @@ MOVE THE SQUARES OF THE CHECKERBOARD WITH DRAGGABLE
         $('#sun').css("fill", "white");
         $('#all').css("background-color", "black");
         $('#all').css("color", "white");
+        $('#all').css("border", "1px solid white");
+        $('#checkerboard').css("background-color", "black");
+        $('.draggable').css("border", "1px solid white");
         $('#spectrum-container').css("border", "1px solid white")
       });
+
+                $(".draggable").draggable();
 
 
     });
