@@ -68,7 +68,7 @@ $(document).ready(function()
 	function displayBar()
 	{
 		var hex=dechex(r)+dechex(g)+dechex(b);
-		$("#picker").append('<div id="'+hex+'" style="float:left;background-color:#'+hex+';width:1px;height:100%;" onMouseover="$(\'#first\').css(\'background-color\',\'#\'+$(this).attr(\'id\'));$(\'#hex\').html(\'#\'+$(this).attr(\'id\')+\'<br/>\');"></div>');
+		$("#picker").append('<div id="'+hex+'" style="float:left;background-color:#'+hex+';width:0.05%;height:100%;" onMouseover="$(\'.draggable_black\').css(\'background-color\',\'#\'+$(this).attr(\'id\'));$(\'#hex\').html(\'#\'+$(this).attr(\'id\')+\'<br/>\');"></div>');
 	}
 	
 	
