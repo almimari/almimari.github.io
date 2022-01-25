@@ -10,6 +10,11 @@
   font-family: machina;
   src: url(fonts/NeueMachina-Black.woff);
 }
+@font-face {
+  font-family: tofino;
+  src: url(fonts/Tofino-MediumPersonal.otf);
+  src: url(fonts/Tofino-MediumPersonal.ttf);  
+}
 
 @font-face {
 	font-family: glamy;
@@ -129,7 +134,7 @@ body, html {
 #title {
 	font-size:5vh;
 	width:  60vw;
-	font-family: bitmap, helvetica;
+	font-family: tofino, helvetica;
 	position: fixed;
 	z-index: 20;
 /*    animation: title 10s infinite;*/
