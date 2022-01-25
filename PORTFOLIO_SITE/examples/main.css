@@ -127,9 +127,9 @@ body, html {
 }
 
 #title {
-	font-size:6vh;
+	font-size:5vh;
 	width:  60vw;
-	font-family: syne, helvetica;
+	font-family: bitmap, helvetica;
 	position: fixed;
 	z-index: 20;
 /*    animation: title 10s infinite;*/
